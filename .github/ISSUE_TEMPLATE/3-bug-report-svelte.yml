@@ -1,0 +1,42 @@
+name: Bug Report - Svelte
+description: 'Submit a Svelte related issue.'
+labels: [svelte]
+assignees:
+  - pedroborges
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please read [our full contribution guide](https://laraxgram.github.io/contributions.html#bug-reports) before submitting bug reports. If you notice improper DocBlock, PHPStan, or IDE warnings while using LaraGram, do not create a GitHub issue. Instead, please submit a pull request to fix the problem.
+
+        Before submitting, please confirm:
+        - The issue is reproducible with the **latest version** of Luna.js
+        - You are using **supported versions** of Node.js, PHP, and other server-side dependencies
+  - type: input
+    attributes:
+      label: '@lunajs/svelte Version'
+      description: Provide the version of `@lunajs/svelte` you are using.
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Backend stack (optional)
+      description: If this bug depends on backend integration, provide details such as LaraGram version, PHP version, or other relevant environment info.
+      placeholder: |
+        LaraGram 4.x
+        PHP 8.4
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Describe the problem
+      description: Explain the behavior you're seeing that you think is a bug, and describe how you expect it to behave instead.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Provide clear steps to reproduce the issue. Include a minimal code example that clearly shows the problem.
+    validations:
+      required: true
