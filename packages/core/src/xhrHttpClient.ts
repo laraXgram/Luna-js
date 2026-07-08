@@ -1,0 +1,186 @@
+import { HttpCancelledError, HttpNetworkError, HttpResponseError } from './httpErrors'
+import { httpHandlers } from './httpHandlers'
+import {
+  FormDataConvertible,
+  HttpClient,
+  HttpClientOptions,
+  HttpRequestConfig,
+  HttpResponse,
+  HttpResponseHeaders,
+} from './types'
+import { mergeDataIntoQueryString } from './url'
+
+function getCookie(name: string): string | null {
+  const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'))
+
+  return match ? decodeURIComponent(match[3]) : null
+}
+
+function parseHeaders(xhr: XMLHttpRequest): HttpResponseHeaders {
+  const headers: HttpResponseHeaders = {}
+
+  xhr
+    .getAllResponseHeaders()
+    .split('\r\n')
+    .forEach((line) => {
+      const index = line.indexOf(':')
+
+      if (index > 0) {
+        headers[line.slice(0, index).toLowerCase().trim()] = line.slice(index + 1).trim()
+      }
+    })
+
+  return headers
+}
+
+function isFormDataRequestBody(value: unknown): value is FormData {
+  return typeof FormData !== 'undefined' && value instanceof FormData
+}
+
+function isRawRequestBody(value: unknown): value is XMLHttpRequestBodyInit {
+  return (
+    typeof value === 'string' ||
+    isFormDataRequestBody(value) ||
+    (typeof Blob !== 'undefined' && value instanceof Blob) ||
+    (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) ||
+    (typeof ArrayBuffer !== 'undefined' && ArrayBuffer.isView(value)) ||
+    (typeof URLSearchParams !== 'undefined' && value instanceof URLSearchParams)
+  )
+}
+
+function setHeaders(xhr: XMLHttpRequest, config: HttpRequestConfig): void {
+  if (!config.headers) {
+    return
+  }
+
+  const isFormData = isFormDataRequestBody(config.data)
+
+  Object.entries(config.headers).forEach(([key, value]) => {
+    if (key.toLowerCase() !== 'content-type' || !isFormData) {
+      xhr.setRequestHeader(key, String(value))
+    }
+  })
+}
+
+function buildUrlWithParams(url: string, params?: Record<string, unknown>): string {
+  if (!params || Object.keys(params).length === 0) {
+    return url
+  }
+
+  // Pass 'get' to force merging params into URL regardless of actual method (matches Axios behavior)
+  const [urlWithParams] = mergeDataIntoQueryString('get', url, params as Record<string, FormDataConvertible>)
+
+  return urlWithParams
+}
+
+/**
+ * Luna's built-in HTTP client using XMLHttpRequest
+ */
+export class XhrHttpClient implements HttpClient {
+  protected xsrfCookieName: string
+  protected xsrfHeaderName: string
+
+  constructor(options: HttpClientOptions = {}) {
+    this.xsrfCookieName = options.xsrfCookieName ?? 'XSRF-TOKEN'
+    this.xsrfHeaderName = options.xsrfHeaderName ?? 'X-XSRF-TOKEN'
+  }
+
+  public async request(config: HttpRequestConfig): Promise<HttpResponse> {
+    const processedConfig = await httpHandlers.processRequest(config)
+
+    try {
+      const response = await this.doRequest(processedConfig)
+
+      return await httpHandlers.processResponse(response)
+    } catch (error) {
+      if (
+        error instanceof HttpResponseError ||
+        error instanceof HttpNetworkError ||
+        error instanceof HttpCancelledError
+      ) {
+        await httpHandlers.processError(error)
+      }
+
+      throw error
+    }
+  }
+
+  protected doRequest(config: HttpRequestConfig): Promise<HttpResponse> {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest()
+      const url = buildUrlWithParams(config.url, config.params)
+
+      xhr.open(config.method.toUpperCase(), url, true)
+
+      const xsrfToken = getCookie(this.xsrfCookieName)
+
+      if (xsrfToken) {
+        xhr.setRequestHeader(this.xsrfHeaderName, xsrfToken)
+      }
+
+      const hasRequestedWithHeader = Object.keys(config.headers ?? {}).some(
+        (key) => key.toLowerCase() === 'x-requested-with',
+      )
+
+      if (!hasRequestedWithHeader) {
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+      }
+
+      let body: Document | XMLHttpRequestBodyInit | null = null
+
+      if (config.data !== null && config.data !== undefined) {
+        if (isRawRequestBody(config.data)) {
+          body = config.data
+        } else if (typeof config.data === 'object') {
+          body = JSON.stringify(config.data)
+
+          if (!config.headers?.['Content-Type'] && !config.headers?.['content-type']) {
+            xhr.setRequestHeader('Content-Type', 'application/json')
+          }
+        } else {
+          body = String(config.data)
+        }
+      }
+
+      setHeaders(xhr, config)
+
+      if (config.onUploadProgress) {
+        xhr.upload.onprogress = (event: ProgressEvent) => {
+          const progress = event.lengthComputable ? event.loaded / event.total : undefined
+
+          config.onUploadProgress!({
+            progress,
+            percentage: progress ? Math.round(progress * 100) : 0,
+            loaded: event.loaded,
+            total: event.lengthComputable ? event.total : undefined,
+          })
+        }
+      }
+
+      if (config.signal) {
+        config.signal.addEventListener('abort', () => xhr.abort())
+      }
+
+      xhr.onabort = () => reject(new HttpCancelledError('Request was cancelled', config.url))
+      xhr.onerror = () => reject(new HttpNetworkError('Network error', config.url))
+
+      xhr.onload = () => {
+        const response: HttpResponse = {
+          status: xhr.status,
+          data: xhr.responseText,
+          headers: parseHeaders(xhr),
+        }
+
+        if (xhr.status >= 400) {
+          reject(new HttpResponseError(`Request failed with status ${xhr.status}`, response, config.url))
+        } else {
+          resolve(response)
+        }
+      }
+
+      xhr.send(body)
+    })
+  }
+}
+
+export const xhrHttpClient = new XhrHttpClient()
