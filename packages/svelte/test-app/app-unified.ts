@@ -1,0 +1,33 @@
+import type { VisitOptions } from '@lunajs/core'
+import { createLunaApp, type ResolvedComponent, router } from '@lunajs/svelte'
+
+window.testing = { Luna: router }
+
+const withAppDefaults = new URLSearchParams(window.location.search).get('withAppDefaults')
+
+createLunaApp<{ locale?: string }>({
+  resolve: async (name) => {
+    const pages = import.meta.glob<ResolvedComponent>('./Pages/**/*.svelte', { eager: true })
+
+    if (name === 'DeferredProps/InstantReload') {
+      await new Promise((resolve) => setTimeout(resolve, 50))
+    }
+
+    return pages[`./Pages/${name}.svelte`] as ResolvedComponent
+  },
+  progress: {
+    delay: 0,
+  },
+  ...(withAppDefaults && {
+    defaults: {
+      visitOptions: (href: string, options: VisitOptions) => {
+        return { headers: { ...options.headers, 'X-From-App-Defaults': 'test' } }
+      },
+    },
+  }),
+  withApp(context, { page }) {
+    context.set('withAppValue', 'injected-via-withApp')
+    context.set('withAppLocale', page.props.locale ?? 'unknown')
+    context.set('withAppComponent', page.component)
+  },
+})

@@ -1,0 +1,65 @@
+<script module lang="ts">
+  export { default as layout } from '@/Layouts/WithoutScrollRegion.svelte'
+</script>
+
+<script lang="ts">
+  import type { Page } from '@lunajs/core'
+  import { luna } from '@lunajs/svelte'
+  import { onMount } from 'svelte'
+
+  interface Props {
+    foo?: string
+  }
+
+  let { foo = 'default' }: Props = $props()
+
+  const preserveCallback = (page: Page) => {
+    alert(page)
+
+    return true
+  }
+
+  const preserveCallbackFalse = (page: Page) => {
+    alert(page)
+
+    return false
+  }
+
+  onMount(() => {
+    window._luna_page_key = crypto.randomUUID()
+  })
+</script>
+
+<div>
+  <span class="text">This is the links page that demonstrates preserve state on Links</span>
+  <span class="foo">Foo is now {foo}</span>
+  <label>
+    Example Field
+    <input type="text" name="example-field" class="field" />
+  </label>
+
+  <a href="/links/preserve-state-page-two" use:luna={{ preserveState: true, data: { foo: 'bar' } }} class="preserve">
+    [State] Preserve: true
+  </a>
+  <a
+    href="/links/preserve-state-page-two"
+    use:luna={{ preserveState: false, data: { foo: 'baz' } }}
+    class="preserve-false"
+  >
+    [State] Preserve: false
+  </a>
+  <a
+    href="/links/preserve-state-page-two"
+    use:luna={{ preserveState: preserveCallback, data: { foo: 'callback-bar' } }}
+    class="preserve-callback"
+  >
+    [State] Preserve Callback: true
+  </a>
+  <a
+    href="/links/preserve-state-page-two"
+    use:luna={{ preserveState: preserveCallbackFalse, data: { foo: 'callback-baz' } }}
+    class="preserve-callback-false"
+  >
+    [State] Preserve Callback: false
+  </a>
+</div>

@@ -1,0 +1,50 @@
+import { type LayoutCallbackReturn, type Page, type SharedPageProps } from '@lunajs/core'
+import type { Component } from 'svelte'
+import type { RenderFunction, RenderProps } from './components/Render.svelte'
+
+export type ComponentResolver = (
+  name: string,
+  page?: Page<SharedPageProps>,
+) => ResolvedComponent | Promise<ResolvedComponent>
+
+export type LayoutResolver = (h: RenderFunction, page: RenderProps) => RenderProps
+
+export type LayoutCallback = (props: SharedPageProps) => LayoutCallbackReturn<Component>
+
+/**
+ * Layout tuple: [Component, { props }]
+ */
+export type LayoutTuple = [Component, Record<string, unknown>?]
+
+/**
+ * Layout object with explicit component: { component: Layout, props: { ... } }
+ */
+export type LayoutObject = {
+  component: Component
+  props?: Record<string, unknown>
+}
+
+/**
+ * Named layouts: { outer: Layout, inner: [Layout, { props }] }
+ */
+export type NamedLayouts = Record<string, Component | LayoutTuple | LayoutObject>
+
+/**
+ * Extended layout type supporting all formats.
+ */
+export type LayoutType =
+  | LayoutResolver
+  | ((props: any) => any)
+  | Component
+  | Component[]
+  | LayoutTuple
+  | LayoutObject
+  | NamedLayouts
+  | (Component | LayoutTuple | LayoutObject)[]
+
+export type ResolvedComponent = {
+  default: Component
+  layout?: LayoutType
+}
+
+export type SvelteLunaAppConfig = {}

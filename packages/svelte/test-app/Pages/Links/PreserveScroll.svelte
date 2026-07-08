@@ -1,0 +1,64 @@
+<script module lang="ts">
+  export { default as layout } from '@/Layouts/WithScrollRegion.svelte'
+</script>
+
+<script lang="ts">
+  import type { Page } from '@lunajs/core'
+  import { luna } from '@lunajs/svelte'
+
+  interface Props {
+    foo?: string
+  }
+
+  let { foo = 'default' }: Props = $props()
+
+  const preserveCallback = (page: Page) => {
+    console.log(JSON.stringify(page))
+
+    return true
+  }
+
+  const preserveCallbackFalse = (page: Page) => {
+    console.log(JSON.stringify(page))
+
+    return false
+  }
+</script>
+
+<div style="height: 800px; width: 600px">
+  <span class="text">This is the links page that demonstrates scroll preservation with scroll regions</span>
+  <span class="foo">Foo is now {foo}</span>
+
+  <a
+    href="/links/preserve-scroll-page-two"
+    use:luna={{ preserveScroll: true, data: { foo: 'baz' } }}
+    class="preserve"
+    data-testid="preserve"
+  >
+    Preserve Scroll
+  </a>
+  <a href="/links/preserve-scroll-page-two" use:luna={{ data: { foo: 'bar' } }} class="reset" data-testid="reset">
+    Reset Scroll
+  </a>
+
+  <a
+    href="/links/preserve-scroll-page-two"
+    use:luna={{ preserveScroll: preserveCallback, data: { foo: 'baz' } }}
+    class="preserve-callback"
+    data-testid="preserve-callback"
+  >
+    Preserve Scroll (Callback)
+  </a>
+  <a
+    href="/links/preserve-scroll-page-two"
+    use:luna={{ preserveScroll: preserveCallbackFalse, data: { foo: 'foo' } }}
+    class="reset-callback"
+    data-testid="reset-callback"
+  >
+    Reset Scroll (Callback)
+  </a>
+
+  <a href="/non-luna" class="off-site" style="display: block">Off-site link</a>
+
+  <a href="/article" use:luna={{}} class="article" data-testid="article"> Article </a>
+</div>

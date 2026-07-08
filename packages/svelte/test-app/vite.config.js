@@ -1,0 +1,41 @@
+import { resolve } from 'path'
+import luna from '@lunajs/vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig } from 'vite'
+
+const isSSR = process.argv.includes('--ssr')
+const asyncEnabled = process.env.SVELTE_ASYNC === 'true'
+
+export default defineConfig({
+  build: {
+    sourcemap: 'inline',
+    emptyOutDir: !isSSR,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        unified: resolve(__dirname, 'index-unified.html'),
+        auto: resolve(__dirname, 'index-auto.html'),
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': __dirname,
+    },
+  },
+  plugins: [
+    luna(),
+    svelte({
+      compilerOptions: {
+        experimental: {
+          async: asyncEnabled,
+        },
+      },
+      dynamicCompileOptions({ filename }) {
+        if (filename.includes('/Pages/SSR/Async.svelte')) {
+          return { experimental: { async: true } }
+        }
+      },
+    }),
+  ],
+})

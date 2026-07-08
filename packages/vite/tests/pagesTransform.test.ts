@@ -1,0 +1,350 @@
+import { describe, expect, it } from 'vitest'
+import { defaultFrameworks } from '../src/frameworks/index'
+import { transformPageResolution } from '../src/pagesTransform'
+
+const transformFull = (code: string) => transformPageResolution(code, defaultFrameworks)
+const transform = (code: string) => transformFull(code)?.code ?? null
+
+describe('Pages Transform', () => {
+  describe('returns null when no transform needed', () => {
+    it('no LunaApp in code', () => {
+      expect(transform(`const foo = 'bar'`)).toBeNull()
+    })
+
+    it('invalid syntax', () => {
+      expect(transform(`import { createLunaApp } from '@lunajs/vue3' {{{ invalid`)).toBeNull()
+    })
+
+    it('unknown framework', () => {
+      const code = `import { createLunaApp } from 'unknown-package'
+export default createLunaApp({ pages: './Pages' })`
+
+      expect(transform(code)).toBeNull()
+    })
+
+    it('resolve already specified', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ resolve: (name) => name })`
+
+      expect(transform(code)).toBeNull()
+    })
+  })
+
+  describe('pages: string', () => {
+    it('transforms for Vue', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: './Pages' })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('transforms for React', () => {
+      const code = `import { createLunaApp } from '@lunajs/react'
+export default createLunaApp({ pages: './Pages' })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/react'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*{.tsx,.jsx}', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.tsx\`] || pages[\`./Pages/\${name}.jsx\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('transforms for Svelte', () => {
+      const code = `import { createLunaApp } from '@lunajs/svelte'
+export default createLunaApp({ pages: './Pages' })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/svelte'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*.svelte', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.svelte\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module
+          } })"
+      `)
+    })
+
+    it('strips trailing slash', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: './Pages/' })`
+
+      expect(transform(code)).toContain('./Pages/${name}.vue')
+      expect(transform(code)).not.toContain('./Pages//')
+    })
+  })
+
+  describe('pages: object', () => {
+    it('transforms with custom path', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: { path: './Views' } })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob('./Views/**/*.vue', { eager: false })
+            const module = await (pages[\`./Views/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('transforms with custom extension', () => {
+      const code = `import { createLunaApp } from '@lunajs/react'
+export default createLunaApp({ pages: { path: './Pages', extension: '.tsx' } })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/react'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*.tsx', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.tsx\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('transforms with extension array', () => {
+      const code = `import { createLunaApp } from '@lunajs/react'
+export default createLunaApp({ pages: { path: './Pages', extension: ['.tsx', '.ts'] } })`
+
+      expect(transform(code)).toContain("import.meta.glob('./Pages/**/*{.tsx,.ts}', { eager: false })")
+    })
+
+    it('transforms with transform function', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({
+  pages: {
+    path: './Pages',
+    transform: (name) => name.replace('/', '-')
+  }
+})`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({
+          resolve: async (name, page) => {
+            const resolvedName = ((name) => name.replace('/', '-'))(name, page)
+            const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
+            const module = await (pages[\`./Pages/\${resolvedName}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          }
+        })"
+      `)
+    })
+
+    it('transforms with lazy: true and no path', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: { lazy: true } })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
+            const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+  })
+
+  describe('default resolver injection', () => {
+    it('injects for empty call', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp()`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
+            const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('injects for empty object', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({})`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
+            const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          } })"
+      `)
+    })
+
+    it('injects alongside other options', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ title: t => t })`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({ resolve: async (name, page) => {
+            const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
+            const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          }, title: t => t })"
+      `)
+    })
+  })
+
+  describe('setup does not affect transform', () => {
+    it('injects resolver alongside setup', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({
+  setup({ App, props, plugin }) {
+    return createSSRApp({ render: () => h(App, props) }).use(plugin)
+  },
+})`
+
+      const result = transform(code)
+      expect(result).not.toBeNull()
+      expect(result).toContain('resolve: async (name, page) =>')
+      expect(result).toContain('setup({ App, props, plugin })')
+    })
+
+    it('skips when resolve is present even with setup', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({
+  resolve: (name) => name,
+  setup({ App, props, plugin }) {
+    return createSSRApp({ render: () => h(App, props) }).use(plugin)
+  },
+})`
+
+      expect(transform(code)).toBeNull()
+    })
+
+    it('transforms pages alongside setup', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({
+  pages: './Pages',
+  setup({ App, props, plugin }) {
+    return createSSRApp({ render: () => h(App, props) }).use(plugin)
+  },
+})`
+
+      const result = transform(code)
+      expect(result).not.toBeNull()
+      expect(result).toContain('resolve: async (name, page) =>')
+      expect(result).toContain('setup({ App, props, plugin })')
+      expect(result).not.toContain('pages:')
+    })
+  })
+
+  describe('preserves surrounding code', () => {
+    it('keeps other config options', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({
+  pages: './Pages',
+  title: (title) => \`My App - \${title}\`,
+  progress: { color: 'red' },
+})`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "import { createLunaApp } from '@lunajs/vue3'
+        export default createLunaApp({
+          resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          },
+          title: (title) => \`My App - \${title}\`,
+          progress: { color: 'red' },
+        })"
+      `)
+    })
+
+    it('keeps code before and after', () => {
+      const code = `// Header comment
+import { createLunaApp } from '@lunajs/vue3'
+
+const config = { color: 'blue' }
+
+export default createLunaApp({
+  pages: './Pages',
+  progress: config,
+})
+
+// Footer comment`
+
+      expect(transform(code)).toMatchInlineSnapshot(`
+        "// Header comment
+        import { createLunaApp } from '@lunajs/vue3'
+
+        const config = { color: 'blue' }
+
+        export default createLunaApp({
+          resolve: async (name, page) => {
+            const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
+            const module = await (pages[\`./Pages/\${name}.vue\`])?.()
+            if (!module) throw new Error(\`Page not found: \${name}\`)
+            return module.default ?? module
+          },
+          progress: config,
+        })
+
+        // Footer comment"
+      `)
+    })
+  })
+
+  describe('pageGlobs', () => {
+    it('returns default globs when no pages property', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp()`
+
+      expect(transformFull(code)?.pageGlobs).toEqual(['./pages/**/*.vue', './Pages/**/*.vue'])
+    })
+
+    it('returns globs for custom directory', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: './Views' })`
+
+      expect(transformFull(code)?.pageGlobs).toEqual(['./Views/**/*.vue'])
+    })
+
+    it('returns globs for custom directory via path option', () => {
+      const code = `import { createLunaApp } from '@lunajs/react'
+export default createLunaApp({ pages: { path: './CustomPages' } })`
+
+      expect(transformFull(code)?.pageGlobs).toEqual(['./CustomPages/**/*{.tsx,.jsx}'])
+    })
+
+    it('returns globs with custom extensions', () => {
+      const code = `import { createLunaApp } from '@lunajs/react'
+export default createLunaApp({ pages: { path: './Pages', extension: '.tsx' } })`
+
+      expect(transformFull(code)?.pageGlobs).toEqual(['./Pages/**/*.tsx'])
+    })
+
+    it('returns default globs for pages object without path', () => {
+      const code = `import { createLunaApp } from '@lunajs/vue3'
+export default createLunaApp({ pages: { lazy: true } })`
+
+      expect(transformFull(code)?.pageGlobs).toEqual(['./pages/**/*.vue', './Pages/**/*.vue'])
+    })
+  })
+})

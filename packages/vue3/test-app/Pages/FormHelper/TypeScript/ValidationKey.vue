@@ -1,0 +1,25 @@
+<script setup lang="ts">
+// This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
+import type { FormDataConvertible } from '@lunajs/core'
+import type { LunaFormProps } from '@lunajs/vue3'
+
+const validation = <T extends Record<string, FormDataConvertible>>(errors: () => LunaFormProps<T>['errors']) => {
+  type Key = keyof ReturnType<typeof errors>
+
+  const filterAndMap = (key: Key) => {
+    const err = errors()
+
+    return (Object.keys(err).filter((k) => k.startsWith(key)) as [keyof ReturnType<typeof errors>]).map((k) => err[k])
+  }
+
+  const unique = (key: Key) => {
+    return filterAndMap(key).filter((error, index, self) => self.indexOf(error) === index)
+  }
+
+  return { filterAndMap, unique }
+}
+</script>
+
+<template>
+  <button @click="validation(() => ({ name: 'Validation error' }))">Handle</button>
+</template>

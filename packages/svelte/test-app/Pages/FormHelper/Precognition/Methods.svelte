@@ -1,0 +1,53 @@
+<script lang="ts">
+  import { useForm } from '@lunajs/svelte'
+
+  const form = useForm({
+    name: '',
+    email: '',
+  })
+    .withPrecognition('post', '/precognition/default')
+    .setValidationTimeout(100)
+</script>
+
+<div>
+  <div>
+    <input name="name" bind:value={form.name} placeholder="Name" onblur={() => form.touch('name')} />
+    {#if form.invalid('name')}
+      <p>
+        {form.errors.name}
+      </p>
+    {/if}
+  </div>
+
+  <div>
+    <input name="email" bind:value={form.email} placeholder="Email" onblur={() => form.touch('email')} />
+    {#if form.invalid('email')}
+      <p>
+        {form.errors.email}
+      </p>
+    {/if}
+  </div>
+
+  {#if form.validating}<p>Validating...</p>{/if}
+
+  <p id="name-touched">{form.touched('name') ? 'Name is touched' : 'Name is not touched'}</p>
+  <p id="email-touched">{form.touched('email') ? 'Email is touched' : 'Email is not touched'}</p>
+  <p id="any-touched">{form.touched() ? 'Form has touched fields' : 'Form has no touched fields'}</p>
+
+  <button type="button" onclick={() => form.validate()}>Validate All Touched</button>
+  <button type="button" onclick={() => form.validate('name')}>Validate Name</button>
+  <button type="button" onclick={() => form.validate({ only: ['name', 'email'] })}>Validate Name and Email</button>
+  <button type="button" onclick={() => form.touch('name', 'email')}>Touch Name and Email</button>
+  <button
+    type="button"
+    onclick={() => {
+      form.touch('name')
+      form.touch('name')
+    }}
+  >
+    Touch Name Twice
+  </button>
+  <button type="button" onclick={() => form.reset()}>Reset All</button>
+  <button type="button" onclick={() => form.reset('name')}>Reset Name</button>
+  <button type="button" onclick={() => form.reset('name', 'email')}>Reset Name and Email</button>
+</div>

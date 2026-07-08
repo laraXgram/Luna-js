@@ -1,0 +1,20 @@
+<script lang="ts">
+  import { luna } from '@lunajs/svelte'
+  interface Props {
+    children?: import('svelte').Snippet
+  }
+
+  let { children }: Props = $props()
+</script>
+
+<div>
+  <a href="/prefetch/swr/2" use:luna={{ prefetch: true, cacheFor: '1s' }}>1s Expired</a>
+  <a href="/prefetch/swr/3" use:luna={{ prefetch: true, cacheFor: 1000 }}>1s Expired (Number)</a>
+  <a href="/prefetch/swr/4" style="margin: 0 20px" use:luna={{ prefetch: true, cacheFor: ['1s', '3s'] }}>
+    1s Stale, 2s Expired
+  </a>
+  <a href="/prefetch/swr/5" use:luna={{ prefetch: true, cacheFor: [1000, 3000] }}> 1s Stale, 2s Expired (Number) </a>
+  <div>
+    {@render children?.()}
+  </div>
+</div>

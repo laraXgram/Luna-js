@@ -1,0 +1,28 @@
+<script lang="ts">
+  import { InfiniteScroll, page, router } from '@lunajs/svelte'
+
+  interface Props {
+    users: { data: { id: number; name: string }[] }
+  }
+
+  let { users }: Props = $props()
+
+  let flashEventCount = $state(0)
+
+  router.on('flash', () => {
+    flashEventCount++
+  })
+</script>
+
+<div>
+  <span id="flash">{JSON.stringify(page.flash)}</span>
+  <span id="flash-event-count">{flashEventCount}</span>
+
+  <InfiniteScroll data="users" style="display: grid; gap: 20px">
+    {#each users.data as user (user.id)}
+      <div style="height: 15vh; border: 1px solid #ccc">
+        {user.name}
+      </div>
+    {/each}
+  </InfiniteScroll>
+</div>

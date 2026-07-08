@@ -1,0 +1,31 @@
+import { resolve } from 'path'
+import luna from '@lunajs/vite'
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+
+const isSSR = process.argv.includes('--ssr')
+
+export default defineConfig({
+  build: {
+    minify: false,
+    emptyOutDir: !isSSR,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        unified: resolve(__dirname, 'index-unified.html'),
+        auto: resolve(__dirname, 'index-auto.html'),
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': __dirname,
+    },
+  },
+  plugins: [
+    luna(),
+    vue({
+      features: { prodDevtools: true },
+    }),
+  ],
+})
