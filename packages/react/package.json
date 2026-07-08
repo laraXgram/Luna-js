@@ -1,6 +1,6 @@
 {
   "name": "@laraxgram/react",
-  "version": "3.6.1",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "The React adapter for Luna.js",
   "repository": {
