@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   const formData = {
     file: new File([], 'example.jpg'),

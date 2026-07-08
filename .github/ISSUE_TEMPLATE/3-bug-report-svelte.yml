@@ -14,8 +14,8 @@ body:
         - You are using **supported versions** of Node.js, PHP, and other server-side dependencies
   - type: input
     attributes:
-      label: '@lunajs/svelte Version'
-      description: Provide the version of `@lunajs/svelte` you are using.
+      label: '@laraxgram/svelte Version'
+      description: Provide the version of `@laraxgram/svelte` you are using.
       placeholder: 1.0.0
     validations:
       required: true

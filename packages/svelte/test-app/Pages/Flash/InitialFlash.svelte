@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page, router } from '@lunajs/svelte'
+  import { page, router } from '@laraxgram/svelte'
 
   let flashEvents: Record<string, unknown>[] = $state([])
 

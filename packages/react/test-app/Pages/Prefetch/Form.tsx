@@ -1,4 +1,4 @@
-import { Link, useForm } from '@lunajs/react'
+import { Link, useForm } from '@laraxgram/react'
 
 export default ({ randomValue }: { randomValue: number }) => {
   const { post } = useForm({})

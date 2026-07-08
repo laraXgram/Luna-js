@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePoll } from '@lunajs/vue3'
+import { usePoll } from '@laraxgram/vue3'
 
 const props = defineProps<{ mode: string; time: number }>()
 

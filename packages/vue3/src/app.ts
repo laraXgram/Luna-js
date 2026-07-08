@@ -12,7 +12,7 @@ import {
   router,
   SharedPageProps,
   type ServerHeadOption,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import {
   Component,
   computed,

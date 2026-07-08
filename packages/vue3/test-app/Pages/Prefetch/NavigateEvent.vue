@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, router } from '@lunajs/vue3'
+import { Link, router } from '@laraxgram/vue3'
 import { onMounted } from 'vue'
 
 onMounted(() => {

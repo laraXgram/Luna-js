@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  declare module '@lunajs/core' {
+  declare module '@laraxgram/luna' {
     export interface LunaConfig {
       layoutProps: {
         title: string
@@ -15,7 +15,7 @@
 
 <script lang="ts">
   // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-  import { setLayoutProps, resetLayoutProps } from '@lunajs/svelte'
+  import { setLayoutProps, resetLayoutProps } from '@laraxgram/svelte'
 
   // setLayoutProps accepts configured layout props
   setLayoutProps({ title: 'Hello' })

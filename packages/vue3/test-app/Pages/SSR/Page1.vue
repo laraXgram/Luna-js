@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, usePage } from '@lunajs/vue3'
+import { Link, usePage } from '@laraxgram/vue3'
 
 defineProps<{
   user: {

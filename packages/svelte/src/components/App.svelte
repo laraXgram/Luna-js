@@ -1,5 +1,5 @@
 <script module lang="ts">
-  import { type Page, type PageProps } from '@lunajs/core'
+  import { type Page, type PageProps } from '@laraxgram/luna'
   import type { ComponentResolver, ResolvedComponent } from '../types'
 
   export interface LunaAppProps<SharedProps extends PageProps = PageProps> {
@@ -11,8 +11,8 @@
 </script>
 
 <script lang="ts">
-  import { isPropsObjectOrCallback, isPropsObject, normalizeLayouts } from '@lunajs/core'
-  import { router } from '@lunajs/core'
+  import { isPropsObjectOrCallback, isPropsObject, normalizeLayouts } from '@laraxgram/luna'
+  import { router } from '@laraxgram/luna'
   import type { Component } from 'svelte'
   import { resetLayoutProps, storeState } from '../layoutProps.svelte'
   import { setPage } from '../page.svelte'

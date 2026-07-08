@@ -1,4 +1,4 @@
-import { Head } from '@lunajs/react'
+import { Head } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

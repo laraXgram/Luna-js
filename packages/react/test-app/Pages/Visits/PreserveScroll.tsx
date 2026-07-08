@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 import WithScrollRegion from '@/Layouts/WithScrollRegion.jsx'
 
 const PreserveScroll = ({ foo = 'default' }) => {

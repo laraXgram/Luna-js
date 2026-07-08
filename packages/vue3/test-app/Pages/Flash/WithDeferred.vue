@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, router, usePage } from '@lunajs/vue3'
+import { Deferred, router, usePage } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 defineProps<{

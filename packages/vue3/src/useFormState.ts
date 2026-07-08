@@ -10,7 +10,7 @@ import {
   UseFormTransformCallback,
   UseFormUtils,
   UseFormWithPrecognitionArguments,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { cloneDeep, isEqual } from 'es-toolkit'
 import { get, has, set } from 'es-toolkit/compat'
 import {

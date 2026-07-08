@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useRemember } from '@lunajs/svelte'
+  import { useRemember } from '@laraxgram/svelte'
 
   let { ...rest } = $props()
 

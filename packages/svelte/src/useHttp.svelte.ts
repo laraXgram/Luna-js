@@ -16,7 +16,7 @@ import type {
   UseFormWithPrecognitionArguments,
   UseHttpSubmitArguments,
   UseHttpSubmitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import {
   hasFiles,
   http,
@@ -25,7 +25,7 @@ import {
   mergeDataIntoQueryString,
   objectToFormData,
   UseFormUtils,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
 import type { NamedInputEvent, ValidationConfig, Validator } from 'laravel-precognition'
 import { toSimpleValidationErrors } from 'laravel-precognition'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head } from '@lunajs/vue3'
+import { Head } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const title = ref('Initial Title')

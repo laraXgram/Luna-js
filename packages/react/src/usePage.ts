@@ -1,4 +1,4 @@
-import { Page, PageProps, SharedPageProps } from '@lunajs/core'
+import { Page, PageProps, SharedPageProps } from '@laraxgram/luna'
 import { use } from 'react'
 import PageContext from './PageContext'
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { WhenVisible } from '@lunajs/vue3'
+import { WhenVisible } from '@laraxgram/vue3'
 
 defineProps<{
   stats?: {

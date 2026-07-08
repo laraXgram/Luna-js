@@ -1,4 +1,4 @@
-import { useRemember } from '@lunajs/react'
+import { useRemember } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default ({ ...props }) => {

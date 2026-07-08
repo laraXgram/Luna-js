@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-  import type { VisitHelperOptions } from '@lunajs/core'
-  import { router } from '@lunajs/svelte'
+  import type { VisitHelperOptions } from '@laraxgram/luna'
+  import { router } from '@laraxgram/svelte'
 
   interface Props {
     user_id?: number | undefined

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Page } from '@lunajs/core'
-import { router } from '@lunajs/vue3'
+import { Page } from '@laraxgram/luna'
+import { router } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 interface PageProps {

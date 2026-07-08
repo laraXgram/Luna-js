@@ -1,5 +1,5 @@
-import type { VisitOptions } from '@lunajs/core'
-import { createLunaApp, type ResolvedComponent, router } from '@lunajs/svelte'
+import type { VisitOptions } from '@laraxgram/luna'
+import { createLunaApp, type ResolvedComponent, router } from '@laraxgram/svelte'
 
 window.testing = { Luna: router }
 

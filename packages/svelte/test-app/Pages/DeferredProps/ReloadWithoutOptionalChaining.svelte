@@ -1,5 +1,5 @@
 <script>
-  import { Deferred, router } from '@lunajs/svelte'
+  import { Deferred, router } from '@laraxgram/svelte'
   import ReloadResults from './ReloadResults.svelte'
 
   const handleReload = () => {

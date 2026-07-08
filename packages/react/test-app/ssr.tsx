@@ -1,5 +1,5 @@
-import { createLunaApp, type ResolvedComponent } from '@lunajs/react'
-import createServer from '@lunajs/react/server'
+import { createLunaApp, type ResolvedComponent } from '@laraxgram/react'
+import createServer from '@laraxgram/react/server'
 import ReactDOMServer from 'react-dom/server'
 
 createServer((page) =>

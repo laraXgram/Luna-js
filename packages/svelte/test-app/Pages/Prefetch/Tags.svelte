@@ -2,7 +2,7 @@
   import { createBubbler, preventDefault } from 'svelte/legacy'
 
   const bubble = createBubbler()
-  import { luna, router, useForm } from '@lunajs/svelte'
+  import { luna, router, useForm } from '@laraxgram/svelte'
   interface Props {
     /* eslint-disable  @typescript-eslint/no-explicit-any */
     pageNumber: any

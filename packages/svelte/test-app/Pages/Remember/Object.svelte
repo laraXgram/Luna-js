@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, useRemember } from '@lunajs/svelte'
+  import { luna, useRemember } from '@laraxgram/svelte'
 
   let untracked = $state('')
 

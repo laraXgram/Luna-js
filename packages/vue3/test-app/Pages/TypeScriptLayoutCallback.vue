@@ -1,9 +1,9 @@
 <script lang="ts">
-import type { LayoutCallback } from '@lunajs/vue3'
+import type { LayoutCallback } from '@laraxgram/vue3'
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
 import AppLayout from '@/Layouts/AppLayout.vue'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     sharedPageProps: {
       auth: { user: { name: string } | null }

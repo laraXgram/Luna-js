@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
 
   const wayfinderUrl = (): {
     url: string

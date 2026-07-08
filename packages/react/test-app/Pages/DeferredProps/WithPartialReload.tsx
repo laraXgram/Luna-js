@@ -1,4 +1,4 @@
-import { Deferred, Link, router, usePage } from '@lunajs/react'
+import { Deferred, Link, router, usePage } from '@laraxgram/react'
 
 const WithPartialReload = ({ withOnly, withExcept }: { withOnly?: string[]; withExcept?: string[] }) => {
   const handleTriggerPartialReload = () => {

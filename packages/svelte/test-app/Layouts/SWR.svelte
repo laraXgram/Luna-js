@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna } from '@lunajs/svelte'
+  import { luna } from '@laraxgram/svelte'
   interface Props {
     children?: import('svelte').Snippet
   }

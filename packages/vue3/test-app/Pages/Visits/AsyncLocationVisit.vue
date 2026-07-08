@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router } from '@lunajs/vue3'
+import { router } from '@laraxgram/vue3'
 import { onUnmounted, ref } from 'vue'
 
 const draft = ref('')

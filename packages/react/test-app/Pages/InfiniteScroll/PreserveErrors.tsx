@@ -1,4 +1,4 @@
-import { InfiniteScroll, useForm, usePage } from '@lunajs/react'
+import { InfiniteScroll, useForm, usePage } from '@laraxgram/react'
 import UserCard, { User } from './UserCard'
 
 export default ({ users }: { users: { data: User[] } }) => {

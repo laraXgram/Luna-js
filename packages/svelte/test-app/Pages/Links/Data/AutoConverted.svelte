@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna } from '@lunajs/svelte'
+  import { luna } from '@laraxgram/svelte'
 
   const linkData = {
     file: new File([], 'example.jpg'),

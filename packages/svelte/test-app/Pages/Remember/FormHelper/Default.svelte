@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, useForm } from '@lunajs/svelte'
+  import { luna, useForm } from '@laraxgram/svelte'
 
   let untracked = $state('')
 

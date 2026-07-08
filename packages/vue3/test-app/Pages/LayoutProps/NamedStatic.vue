@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@lunajs/vue3'
+import { Link } from '@laraxgram/vue3'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ContentLayout from '@/Layouts/ContentLayout.vue'
 

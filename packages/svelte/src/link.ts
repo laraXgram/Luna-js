@@ -12,7 +12,7 @@ import {
   type LinkPrefetchOption,
   type Method,
   type VisitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import type { ActionReturn } from 'svelte/action'
 import { config } from '.'
 

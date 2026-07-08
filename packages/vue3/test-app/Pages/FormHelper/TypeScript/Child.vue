@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import type { LunaForm } from '@lunajs/vue3'
+import type { LunaForm } from '@laraxgram/vue3'
 import { toRef } from 'vue'
 
 const props = defineProps<{

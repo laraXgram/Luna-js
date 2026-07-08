@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Method, UrlMethodPair } from '@lunajs/core'
-import { useForm } from '@lunajs/vue3'
+import { Method, UrlMethodPair } from '@laraxgram/luna'
+import { useForm } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const wayfinderUrl = (): UrlMethodPair => ({

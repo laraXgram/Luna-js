@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { FormComponentRef } from '@lunajs/core'
-import { Form } from '@lunajs/vue3'
+import { FormComponentRef } from '@laraxgram/luna'
+import { Form } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const formRef = ref<FormComponentRef | null>(null)

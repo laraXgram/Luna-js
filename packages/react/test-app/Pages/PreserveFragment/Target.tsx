@@ -1,4 +1,4 @@
-import { usePage } from '@lunajs/react'
+import { usePage } from '@laraxgram/react'
 
 export default () => {
   const page = usePage()

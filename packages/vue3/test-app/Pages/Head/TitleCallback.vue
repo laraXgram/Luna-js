@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link, router } from '@lunajs/vue3'
+import { Head, Link, router } from '@laraxgram/vue3'
 
 defineProps<{ titleSuffix?: string }>()
 

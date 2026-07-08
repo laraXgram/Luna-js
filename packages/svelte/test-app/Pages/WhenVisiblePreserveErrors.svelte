@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { WhenVisible, useForm, page } from '@lunajs/svelte'
+  import { WhenVisible, useForm, page } from '@laraxgram/svelte'
 
   interface Props {
     foo?: string

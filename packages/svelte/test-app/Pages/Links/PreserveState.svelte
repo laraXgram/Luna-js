@@ -3,8 +3,8 @@
 </script>
 
 <script lang="ts">
-  import type { Page } from '@lunajs/core'
-  import { luna } from '@lunajs/svelte'
+  import type { Page } from '@laraxgram/luna'
+  import { luna } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
 
   interface Props {

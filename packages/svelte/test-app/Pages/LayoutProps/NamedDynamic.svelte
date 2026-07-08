@@ -9,7 +9,7 @@
 </script>
 
 <script lang="ts">
-  import { setLayoutProps } from '@lunajs/svelte'
+  import { setLayoutProps } from '@laraxgram/svelte'
 </script>
 
 <div>

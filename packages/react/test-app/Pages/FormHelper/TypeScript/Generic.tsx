@@ -1,6 +1,6 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import type { FormDataConvertible } from '@lunajs/core'
-import type { LunaFormProps } from '@lunajs/react'
+import type { FormDataConvertible } from '@laraxgram/luna'
+import type { LunaFormProps } from '@laraxgram/react'
 
 interface GenericProps<TFormData extends Record<string, FormDataConvertible>> {
   form: LunaFormProps<TFormData>

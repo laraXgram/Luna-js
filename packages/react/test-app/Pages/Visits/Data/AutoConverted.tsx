@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 
 export default () => {
   const formData = { file: new File([], 'example.jpg'), foo: 'bar' }

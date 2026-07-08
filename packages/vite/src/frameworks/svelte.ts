@@ -7,7 +7,7 @@
  * The SSR template shows what the plugin generates. For a user's SSR entry:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/svelte'
+ * import { createLunaApp } from '@laraxgram/svelte'
  *
  * createLunaApp({
  *   resolve: (name) => resolvePageComponent(name),
@@ -17,8 +17,8 @@
  * The plugin transforms it to:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/svelte'
- * import createServer from '@lunajs/svelte/server'
+ * import { createLunaApp } from '@laraxgram/svelte'
+ * import createServer from '@laraxgram/svelte/server'
  * import { render } from 'svelte/server'
  *
  * const ssr = await createLunaApp({
@@ -40,7 +40,7 @@ import type { FrameworkConfig } from '../types'
 
 export const config: FrameworkConfig = {
   // Package name used to detect Svelte usage via import statements
-  package: '@lunajs/svelte',
+  package: '@laraxgram/svelte',
 
   // Svelte components use .svelte extension
   extensions: ['.svelte'],
@@ -53,7 +53,7 @@ export const config: FrameworkConfig = {
   // Uses import.meta.env.PROD to skip the standalone server in dev mode
   // Note: Svelte uses a different variable name (ssr) and render function import
   ssr: (configureCall, options) => `
-import createServer from '@lunajs/svelte/server'
+import createServer from '@laraxgram/svelte/server'
 import { render } from 'svelte/server'
 
 const ssr = await ${configureCall}

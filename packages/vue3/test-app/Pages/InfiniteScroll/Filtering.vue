@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InfiniteScroll, Link, useForm } from '@lunajs/vue3'
+import { InfiniteScroll, Link, useForm } from '@laraxgram/vue3'
 import { debounce } from 'es-toolkit'
 import { watch } from 'vue'
 import { User, default as UserCard } from './UserCard.vue'

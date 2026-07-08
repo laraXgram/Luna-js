@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { setLayoutProps } from '@lunajs/vue3'
+import { setLayoutProps } from '@laraxgram/vue3'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ContentLayout from '@/Layouts/ContentLayout.vue'
 

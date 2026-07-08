@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { http } from '@lunajs/vue3'
+import { http } from '@laraxgram/vue3'
 
 declare global {
   interface Window {

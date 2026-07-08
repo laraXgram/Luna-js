@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 
 export default ({ foo, bar }: { foo: string; bar: string }) => {
   return (

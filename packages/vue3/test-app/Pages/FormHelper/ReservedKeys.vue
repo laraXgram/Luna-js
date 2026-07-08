@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useForm } from '@lunajs/vue3'
+import { useForm } from '@laraxgram/vue3'
 
 // @ts-expect-error - Intentionally using reserved key to test validation
 const form = useForm({ progress: 0 })

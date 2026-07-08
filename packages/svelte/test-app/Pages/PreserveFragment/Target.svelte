@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { usePage } from '@lunajs/svelte'
+  import { usePage } from '@laraxgram/svelte'
 
   const page = usePage()
 </script>

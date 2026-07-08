@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, router } from '@lunajs/vue3'
+import { Deferred, router } from '@laraxgram/vue3'
 import { onMounted } from 'vue'
 
 defineProps<{

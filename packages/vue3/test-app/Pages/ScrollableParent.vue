@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getScrollableParent } from '@lunajs/core'
+import { getScrollableParent } from '@laraxgram/luna'
 import { onMounted, ref } from 'vue'
 
 const overflowXHidden = ref<HTMLElement | null>(null)

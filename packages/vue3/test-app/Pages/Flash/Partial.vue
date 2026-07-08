@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, usePage } from '@lunajs/vue3'
+import { router, usePage } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 defineProps<{

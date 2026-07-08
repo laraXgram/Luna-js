@@ -1,4 +1,4 @@
-import { router, usePoll } from '@lunajs/react'
+import { router, usePoll } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

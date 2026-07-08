@@ -35,12 +35,12 @@ describe('SSR Transform', () => {
 
   describe('wrapWithServerBootstrap', () => {
     it('wraps with server bootstrap for Svelte', () => {
-      const code = `import { createLunaApp } from '@lunajs/svelte'
+      const code = `import { createLunaApp } from '@laraxgram/svelte'
 createLunaApp({ resolve: (name) => name })`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/svelte'
-        import createServer from '@lunajs/svelte/server'
+        "import { createLunaApp } from '@laraxgram/svelte'
+        import createServer from '@laraxgram/svelte/server'
         import { render } from 'svelte/server'
 
         const ssr = await createLunaApp({ resolve: (name) => name })
@@ -56,12 +56,12 @@ createLunaApp({ resolve: (name) => name })`
     })
 
     it('wraps with server bootstrap for Vue', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({})`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
-        import createServer from '@lunajs/vue3/server'
+        "import { createLunaApp } from '@laraxgram/vue3'
+        import createServer from '@laraxgram/vue3/server'
         import { renderToString } from 'vue/server-renderer'
 
         const render = await createLunaApp({})
@@ -77,12 +77,12 @@ createLunaApp({})`
     })
 
     it('wraps with server bootstrap for React', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 createLunaApp({})`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
-        import createServer from '@lunajs/react/server'
+        "import { createLunaApp } from '@laraxgram/react'
+        import createServer from '@laraxgram/react/server'
         import { renderToString } from 'react-dom/server'
 
         const render = await createLunaApp({})
@@ -98,12 +98,12 @@ createLunaApp({})`
     })
 
     it('includes port, host and cluster config', () => {
-      const code = `import { createLunaApp } from '@lunajs/svelte'
+      const code = `import { createLunaApp } from '@laraxgram/svelte'
 createLunaApp({})`
 
       expect(wrap(code, { port: 13715, host: '127.0.0.1', cluster: true })).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/svelte'
-        import createServer from '@lunajs/svelte/server'
+        "import { createLunaApp } from '@laraxgram/svelte'
+        import createServer from '@laraxgram/svelte/server'
         import { render } from 'svelte/server'
 
         const ssr = await createLunaApp({})
@@ -123,7 +123,7 @@ createLunaApp({})`
     })
 
     it('preserves variables and code around the call', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 import { initializeTheme } from './composables/useAppearance'
 
 const appName = import.meta.env.VITE_APP_NAME || 'LaraGram'
@@ -136,12 +136,12 @@ createLunaApp({
 initializeTheme()`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         import { initializeTheme } from './composables/useAppearance'
 
         const appName = import.meta.env.VITE_APP_NAME || 'LaraGram'
 
-        import createServer from '@lunajs/vue3/server'
+        import createServer from '@laraxgram/vue3/server'
         import { renderToString } from 'vue/server-renderer'
 
         const render = await createLunaApp({
@@ -162,8 +162,8 @@ initializeTheme()`
     })
 
     it('wraps legacy createServer pattern with import.meta.env.PROD guard', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
-import createServer from '@lunajs/vue3/server'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
+import createServer from '@laraxgram/vue3/server'
 import { createSSRApp, h } from 'vue'
 import { renderToString } from 'vue/server-renderer'
 
@@ -179,8 +179,8 @@ createServer((page) =>
 )`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
-        import createServer from '@lunajs/vue3/server'
+        "import { createLunaApp } from '@laraxgram/vue3'
+        import createServer from '@laraxgram/vue3/server'
         import { createSSRApp, h } from 'vue'
         import { renderToString } from 'vue/server-renderer'
 
@@ -203,12 +203,12 @@ createServer((page) =>
     })
 
     it('preserves options in legacy createServer pattern', () => {
-      const code = `import createServer from '@lunajs/vue3/server'
+      const code = `import createServer from '@laraxgram/vue3/server'
 
 createServer((page) => renderApp(page), { port: 13715 })`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import createServer from '@lunajs/vue3/server'
+        "import createServer from '@laraxgram/vue3/server'
 
         const renderPage = (page) => renderApp(page)
 
@@ -221,12 +221,12 @@ createServer((page) => renderApp(page), { port: 13715 })`
     })
 
     it('wraps void createLunaApp expression', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 void createLunaApp({ resolve: (name) => name })`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
-        import createServer from '@lunajs/react/server'
+        "import { createLunaApp } from '@laraxgram/react'
+        import createServer from '@laraxgram/react/server'
         import { renderToString } from 'react-dom/server'
 
         const render = await createLunaApp({ resolve: (name) => name })
@@ -242,12 +242,12 @@ void createLunaApp({ resolve: (name) => name })`
     })
 
     it('wraps void createLunaApp with .catch() chain', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 void createLunaApp({ resolve: (name) => name }).catch(console.error)`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
-        import createServer from '@lunajs/react/server'
+        "import { createLunaApp } from '@laraxgram/react'
+        import createServer from '@laraxgram/react/server'
         import { renderToString } from 'react-dom/server'
 
         const render = await createLunaApp({ resolve: (name) => name })
@@ -263,12 +263,12 @@ void createLunaApp({ resolve: (name) => name }).catch(console.error)`
     })
 
     it('wraps createLunaApp().catch() without void', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 createLunaApp({ resolve: (name) => name }).catch(console.error)`
 
       expect(wrap(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
-        import createServer from '@lunajs/react/server'
+        "import { createLunaApp } from '@laraxgram/react'
+        import createServer from '@laraxgram/react/server'
         import { renderToString } from 'react-dom/server'
 
         const render = await createLunaApp({ resolve: (name) => name })
@@ -284,8 +284,8 @@ createLunaApp({ resolve: (name) => name }).catch(console.error)`
     })
 
     it('does not transform createServer if already exported', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
-import createServer from '@lunajs/vue3/server'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
+import createServer from '@laraxgram/vue3/server'
 
 export default createServer((page) => createLunaApp({ page }))`
 
@@ -293,7 +293,7 @@ export default createServer((page) => createLunaApp({ page }))`
     })
 
     it('wraps with only resolve provided (no setup)', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({
   resolve: (name) => require(\`./Pages/\${name}\`),
 })`
@@ -306,7 +306,7 @@ createLunaApp({
     })
 
     it('wraps with only setup provided (no resolve)', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({
   setup({ App, props, plugin }) {
     return createSSRApp({ render: () => h(App, props) }).use(plugin)
@@ -320,7 +320,7 @@ createLunaApp({
     })
 
     it('wraps with both resolve and setup provided', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({
   resolve: (name) => require(\`./Pages/\${name}\`),
   setup({ App, props, plugin }) {
@@ -336,7 +336,7 @@ createLunaApp({
     })
 
     it('wraps with neither resolve nor setup', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({})`
 
       const result = wrap(code)
@@ -345,7 +345,7 @@ createLunaApp({})`
     })
 
     it('wraps with resolve and withApp but no setup', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({
   resolve: (name) => require(\`./Pages/\${name}\`),
   withApp(app) {
@@ -364,7 +364,7 @@ createLunaApp({
 
   describe('pages transform then SSR transform composition', () => {
     it('composes both transforms on a minimal call', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp()`
 
       const afterPages = transformPages(code)
@@ -379,7 +379,7 @@ createLunaApp()`
     })
 
     it('composes both transforms with pages shorthand', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 createLunaApp({ pages: './Pages' })`
 
       const afterPages = transformPages(code)
@@ -394,7 +394,7 @@ createLunaApp({ pages: './Pages' })`
     })
 
     it('composes both transforms with pages shorthand and withApp', () => {
-      const code = `import { createLunaApp } from '@lunajs/svelte'
+      const code = `import { createLunaApp } from '@laraxgram/svelte'
 createLunaApp({
   pages: './Pages',
   withApp(context) {
@@ -416,7 +416,7 @@ createLunaApp({
     })
 
     it('skips pages transform when resolve is already present, then applies SSR transform', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({
   resolve: (name) => require(\`./Pages/\${name}\`),
 })`

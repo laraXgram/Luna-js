@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   const locationVisit = (e: Event) => {
     e.preventDefault()

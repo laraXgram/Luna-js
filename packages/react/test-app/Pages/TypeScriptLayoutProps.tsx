@@ -1,7 +1,7 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { resetLayoutProps, setLayoutProps } from '@lunajs/react'
+import { resetLayoutProps, setLayoutProps } from '@laraxgram/react'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     layoutProps: {
       title: string

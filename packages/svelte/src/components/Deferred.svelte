@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { isSameUrlWithoutQueryOrHash, router, partialReloadRequestsSomeProps } from '@lunajs/core'
+  import { isSameUrlWithoutQueryOrHash, router, partialReloadRequestsSomeProps } from '@laraxgram/luna'
   import { get } from 'es-toolkit/compat'
   import { page } from '../index'
 

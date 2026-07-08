@@ -1,4 +1,4 @@
-import { router } from '@lunajs/core'
+import { router } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
 import { ComponentOptions } from 'vue'
 

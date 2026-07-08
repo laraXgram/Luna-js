@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, WhenVisible } from '@lunajs/vue3'
+import { Link, WhenVisible } from '@laraxgram/vue3'
 
 defineProps<{
   lazyData?: {

@@ -1,4 +1,4 @@
-import { createLunaApp, router } from '@lunajs/react'
+import { createLunaApp, router } from '@laraxgram/react'
 
 window.testing = { Luna: router }
 

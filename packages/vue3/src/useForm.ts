@@ -18,7 +18,7 @@ import {
   UseFormUtils,
   UseFormWithPrecognitionArguments,
   VisitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
 import { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laravel-precognition'
 import useFormState from './useFormState'

@@ -1,1 +1,1 @@
-export { default as default } from '@lunajs/core/server'
+export { default as default } from '@laraxgram/luna/server'

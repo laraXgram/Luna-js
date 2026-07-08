@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { InfiniteScrollRef } from '@lunajs/core'
-  import { InfiniteScroll } from '@lunajs/svelte'
+  import type { InfiniteScrollRef } from '@laraxgram/luna'
+  import { InfiniteScroll } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
   import UserCard, { type User } from './UserCard.svelte'
   interface Props {

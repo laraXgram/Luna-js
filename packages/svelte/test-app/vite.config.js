@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import luna from '@lunajs/vite'
+import luna from '@laraxgram/vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vite'
 

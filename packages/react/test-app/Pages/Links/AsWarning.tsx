@@ -1,5 +1,5 @@
-import type { Method } from '@lunajs/core'
-import { Link } from '@lunajs/react'
+import type { Method } from '@laraxgram/luna'
+import { Link } from '@laraxgram/react'
 
 export default ({ method }: { method: Method }) => {
   return (

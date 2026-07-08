@@ -1,4 +1,4 @@
-import { usePoll } from '@lunajs/react'
+import { usePoll } from '@laraxgram/react'
 
 export default () => {
   const { start, stop } = usePoll(

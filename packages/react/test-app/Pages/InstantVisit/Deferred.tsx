@@ -1,4 +1,4 @@
-import { Deferred } from '@lunajs/react'
+import { Deferred } from '@laraxgram/react'
 
 export default ({ title, heavyData }: { title?: string; heavyData?: string }) => {
   return (

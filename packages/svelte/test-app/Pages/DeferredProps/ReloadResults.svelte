@@ -1,5 +1,5 @@
 <script>
-  import { page } from '@lunajs/svelte'
+  import { page } from '@laraxgram/svelte'
 
   const results = $derived(page.props.results)
 </script>

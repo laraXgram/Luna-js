@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 
 export default ({ page, timestamp }: { page: number; timestamp: number }) => {
   const prefetchPage2 = () => {

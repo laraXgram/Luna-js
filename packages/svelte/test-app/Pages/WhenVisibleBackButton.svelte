@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, WhenVisible } from '@lunajs/svelte'
+  import { Link, WhenVisible } from '@laraxgram/svelte'
 
   interface Props {
     lazyData?:

@@ -1,4 +1,4 @@
-import { type LayoutCallbackReturn, PageHandler, SharedPageProps } from '@lunajs/core'
+import { type LayoutCallbackReturn, PageHandler, SharedPageProps } from '@laraxgram/luna'
 import { ComponentType, ReactNode } from 'react'
 
 export type LayoutFunction = (page: ReactNode) => ReactNode

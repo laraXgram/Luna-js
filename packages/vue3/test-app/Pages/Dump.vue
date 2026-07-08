@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Method } from '@lunajs/core'
-import { usePage } from '@lunajs/vue3'
+import { Method } from '@laraxgram/luna'
+import { usePage } from '@laraxgram/vue3'
 import { onBeforeMount } from 'vue'
 import type { MulterFile } from '../types'
 

@@ -5,7 +5,7 @@ import luna from '../src'
 
 describe('plugin', () => {
   it('has correct name', () => {
-    expect(luna().name).toBe('@lunajs/vite')
+    expect(luna().name).toBe('@laraxgram/vite')
   })
 })
 
@@ -13,7 +13,7 @@ describe('pages property transform', () => {
   describe('string path', () => {
     it('transforms for Vue', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ pages: './Pages' })
       `)
 
@@ -24,7 +24,7 @@ describe('pages property transform', () => {
 
     it('transforms for React with tsx/jsx fallback', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/react'
+        import { createLunaApp } from '@laraxgram/react'
         export default createLunaApp({ pages: './Pages' })
       `)
 
@@ -35,7 +35,7 @@ describe('pages property transform', () => {
 
     it('transforms for Svelte', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/svelte'
+        import { createLunaApp } from '@laraxgram/svelte'
         export default createLunaApp({ pages: './Pages' })
       `)
 
@@ -45,7 +45,7 @@ describe('pages property transform', () => {
 
     it('strips trailing slash', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ pages: './Pages/' })
       `)
 
@@ -57,7 +57,7 @@ describe('pages property transform', () => {
   describe('object config', () => {
     it('transforms with path', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ pages: { path: './Custom' } })
       `)
 
@@ -67,7 +67,7 @@ describe('pages property transform', () => {
 
     it('transforms with custom extension', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/react'
+        import { createLunaApp } from '@laraxgram/react'
         export default createLunaApp({ pages: { path: './Pages', extension: '.jsx' } })
       `)
 
@@ -78,7 +78,7 @@ describe('pages property transform', () => {
 
     it('transforms with transform function', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({
           pages: {
             path: './Pages',
@@ -95,7 +95,7 @@ describe('pages property transform', () => {
   describe('default resolver injection', () => {
     it('injects default resolver for empty call', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp()
       `)
 
@@ -106,7 +106,7 @@ describe('pages property transform', () => {
 
     it('injects default resolver for empty object', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({})
       `)
 
@@ -115,7 +115,7 @@ describe('pages property transform', () => {
 
     it('injects default resolver with other options', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ title: t => t })
       `)
 
@@ -127,7 +127,7 @@ describe('pages property transform', () => {
   describe('edge cases', () => {
     it('preserves other options', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({
           pages: './Pages',
           setup({ app }) { app.use(router) },
@@ -163,7 +163,7 @@ describe('pages property transform', () => {
 
     it('does not transform when resolve already specified', () => {
       const result = transform(`
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({
           resolve: (name) => import(\`./Pages/\${name}.vue\`)
         })
@@ -204,7 +204,7 @@ describe('page warmup', () => {
       plugin.configureServer!({ warmupRequest } as any)
 
       const appFile = join(tmpDir, 'app.ts')
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp()`
 
       plugin.transform!(code, appFile)
@@ -228,7 +228,7 @@ export default createLunaApp()`
   it('does not call warmupRequest when server is not available', () => {
     const plugin = luna({ ssr: false })
 
-    const code = `import { createLunaApp } from '@lunajs/vue3'
+    const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: './Pages' })`
 
     const result = plugin.transform!(code, 'app.ts')
@@ -242,7 +242,7 @@ export default createLunaApp({ pages: './Pages' })`
 
     plugin.configureServer!({ warmupRequest } as any)
 
-    const code = `import { createLunaApp } from '@lunajs/vue3'
+    const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: './NonExistentDir' })`
 
     plugin.transform!(code, '/some/fake/path/app.ts')

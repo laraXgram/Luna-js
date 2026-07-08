@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { usePoll } from '@lunajs/svelte'
+  import { usePoll } from '@laraxgram/svelte'
 
   let { mode, time } = $props<{ mode: string; time: number }>()
 

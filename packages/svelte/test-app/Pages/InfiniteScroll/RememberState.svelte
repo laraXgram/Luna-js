@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfiniteScroll, Link, router } from '@lunajs/svelte'
+  import { InfiniteScroll, Link, router } from '@laraxgram/svelte'
   import { preventDefault } from 'svelte/legacy'
   import UserCard, { type User } from './UserCard.svelte'
 

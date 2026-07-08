@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { VisitOptions } from '@lunajs/core'
-  import { config, Link, useForm, page } from '@lunajs/svelte'
+  import type { VisitOptions } from '@laraxgram/luna'
+  import { config, Link, useForm, page } from '@laraxgram/svelte'
 
   const form = useForm({})
 

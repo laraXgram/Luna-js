@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Method } from '@lunajs/core'
-  import { Form } from '@lunajs/svelte'
+  import type { Method } from '@laraxgram/luna'
+  import { Form } from '@laraxgram/svelte'
 
   let method: Method = $state('get')
 </script>

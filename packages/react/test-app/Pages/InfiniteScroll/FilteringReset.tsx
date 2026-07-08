@@ -1,4 +1,4 @@
-import { InfiniteScroll, useForm } from '@lunajs/react'
+import { InfiniteScroll, useForm } from '@laraxgram/react'
 import { debounce } from 'es-toolkit'
 import { useEffect, useMemo } from 'react'
 import UserCard, { User } from './UserCard'

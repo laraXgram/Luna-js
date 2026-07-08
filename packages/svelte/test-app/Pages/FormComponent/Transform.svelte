@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { FormDataConvertible } from '@lunajs/core'
-  import { Form } from '@lunajs/svelte'
+  import type { FormDataConvertible } from '@laraxgram/luna'
+  import { Form } from '@laraxgram/svelte'
 
   let transformType = $state('none')
 

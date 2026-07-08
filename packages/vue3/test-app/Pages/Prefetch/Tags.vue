@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, router, useForm } from '@lunajs/vue3'
+import { Link, router, useForm } from '@laraxgram/vue3'
 
 const props = defineProps({
   pageNumber: String,

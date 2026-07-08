@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   const { foo = 'default' }: { foo?: string } = $props()
 

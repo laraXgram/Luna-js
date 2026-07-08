@@ -13,7 +13,7 @@ import {
   router,
   setupProgress,
   SharedPageProps,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { createElement, ReactElement, StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { renderToString } from 'react-dom/server'

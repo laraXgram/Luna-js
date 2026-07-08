@@ -17,9 +17,9 @@
     "vite": "^8.0.16"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
-    "@lunajs/react": "workspace:*",
-    "@lunajs/vite": "workspace:*",
+    "@laraxgram/luna": "workspace:*",
+    "@laraxgram/react": "workspace:*",
+    "@laraxgram/vite": "workspace:*",
     "@vitejs/plugin-react": "^6.0.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"

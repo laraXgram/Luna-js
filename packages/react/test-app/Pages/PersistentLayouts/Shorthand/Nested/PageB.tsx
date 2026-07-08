@@ -1,4 +1,4 @@
-import { Link, usePage } from '@lunajs/react'
+import { Link, usePage } from '@laraxgram/react'
 import NestedLayout from '@/Layouts/NestedLayout.jsx'
 import SiteLayout from '@/Layouts/SiteLayout.jsx'
 

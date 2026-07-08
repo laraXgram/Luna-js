@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred, page, useForm } from '@lunajs/svelte'
+  import { Deferred, page, useForm } from '@laraxgram/svelte'
 
   interface Props {
     foo: { text: string } | undefined

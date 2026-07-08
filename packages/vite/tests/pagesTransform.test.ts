@@ -12,7 +12,7 @@ describe('Pages Transform', () => {
     })
 
     it('invalid syntax', () => {
-      expect(transform(`import { createLunaApp } from '@lunajs/vue3' {{{ invalid`)).toBeNull()
+      expect(transform(`import { createLunaApp } from '@laraxgram/vue3' {{{ invalid`)).toBeNull()
     })
 
     it('unknown framework', () => {
@@ -23,7 +23,7 @@ export default createLunaApp({ pages: './Pages' })`
     })
 
     it('resolve already specified', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ resolve: (name) => name })`
 
       expect(transform(code)).toBeNull()
@@ -32,11 +32,11 @@ export default createLunaApp({ resolve: (name) => name })`
 
   describe('pages: string', () => {
     it('transforms for Vue', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: './Pages' })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
             const module = await (pages[\`./Pages/\${name}.vue\`])?.()
@@ -47,11 +47,11 @@ export default createLunaApp({ pages: './Pages' })`
     })
 
     it('transforms for React', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 export default createLunaApp({ pages: './Pages' })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
+        "import { createLunaApp } from '@laraxgram/react'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob('./Pages/**/*{.tsx,.jsx}', { eager: false })
             const module = await (pages[\`./Pages/\${name}.tsx\`] || pages[\`./Pages/\${name}.jsx\`])?.()
@@ -62,11 +62,11 @@ export default createLunaApp({ pages: './Pages' })`
     })
 
     it('transforms for Svelte', () => {
-      const code = `import { createLunaApp } from '@lunajs/svelte'
+      const code = `import { createLunaApp } from '@laraxgram/svelte'
 export default createLunaApp({ pages: './Pages' })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/svelte'
+        "import { createLunaApp } from '@laraxgram/svelte'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob('./Pages/**/*.svelte', { eager: false })
             const module = await (pages[\`./Pages/\${name}.svelte\`])?.()
@@ -77,7 +77,7 @@ export default createLunaApp({ pages: './Pages' })`
     })
 
     it('strips trailing slash', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: './Pages/' })`
 
       expect(transform(code)).toContain('./Pages/${name}.vue')
@@ -87,11 +87,11 @@ export default createLunaApp({ pages: './Pages/' })`
 
   describe('pages: object', () => {
     it('transforms with custom path', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: { path: './Views' } })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob('./Views/**/*.vue', { eager: false })
             const module = await (pages[\`./Views/\${name}.vue\`])?.()
@@ -102,11 +102,11 @@ export default createLunaApp({ pages: { path: './Views' } })`
     })
 
     it('transforms with custom extension', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 export default createLunaApp({ pages: { path: './Pages', extension: '.tsx' } })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/react'
+        "import { createLunaApp } from '@laraxgram/react'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob('./Pages/**/*.tsx', { eager: false })
             const module = await (pages[\`./Pages/\${name}.tsx\`])?.()
@@ -117,14 +117,14 @@ export default createLunaApp({ pages: { path: './Pages', extension: '.tsx' } })`
     })
 
     it('transforms with extension array', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 export default createLunaApp({ pages: { path: './Pages', extension: ['.tsx', '.ts'] } })`
 
       expect(transform(code)).toContain("import.meta.glob('./Pages/**/*{.tsx,.ts}', { eager: false })")
     })
 
     it('transforms with transform function', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({
   pages: {
     path: './Pages',
@@ -133,7 +133,7 @@ export default createLunaApp({
 })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({
           resolve: async (name, page) => {
             const resolvedName = ((name) => name.replace('/', '-'))(name, page)
@@ -147,11 +147,11 @@ export default createLunaApp({
     })
 
     it('transforms with lazy: true and no path', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: { lazy: true } })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
             const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
@@ -164,11 +164,11 @@ export default createLunaApp({ pages: { lazy: true } })`
 
   describe('default resolver injection', () => {
     it('injects for empty call', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp()`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
             const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
@@ -179,11 +179,11 @@ export default createLunaApp()`
     })
 
     it('injects for empty object', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({})`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
             const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
@@ -194,11 +194,11 @@ export default createLunaApp({})`
     })
 
     it('injects alongside other options', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ title: t => t })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({ resolve: async (name, page) => {
             const pages = import.meta.glob(['./pages/**/*.vue', './Pages/**/*.vue'], { eager: false })
             const module = await (pages[\`./pages/\${name}.vue\`] || pages[\`./Pages/\${name}.vue\`])?.()
@@ -211,7 +211,7 @@ export default createLunaApp({ title: t => t })`
 
   describe('setup does not affect transform', () => {
     it('injects resolver alongside setup', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({
   setup({ App, props, plugin }) {
     return createSSRApp({ render: () => h(App, props) }).use(plugin)
@@ -225,7 +225,7 @@ export default createLunaApp({
     })
 
     it('skips when resolve is present even with setup', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({
   resolve: (name) => name,
   setup({ App, props, plugin }) {
@@ -237,7 +237,7 @@ export default createLunaApp({
     })
 
     it('transforms pages alongside setup', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({
   pages: './Pages',
   setup({ App, props, plugin }) {
@@ -255,7 +255,7 @@ export default createLunaApp({
 
   describe('preserves surrounding code', () => {
     it('keeps other config options', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({
   pages: './Pages',
   title: (title) => \`My App - \${title}\`,
@@ -263,7 +263,7 @@ export default createLunaApp({
 })`
 
       expect(transform(code)).toMatchInlineSnapshot(`
-        "import { createLunaApp } from '@lunajs/vue3'
+        "import { createLunaApp } from '@laraxgram/vue3'
         export default createLunaApp({
           resolve: async (name, page) => {
             const pages = import.meta.glob('./Pages/**/*.vue', { eager: false })
@@ -279,7 +279,7 @@ export default createLunaApp({
 
     it('keeps code before and after', () => {
       const code = `// Header comment
-import { createLunaApp } from '@lunajs/vue3'
+import { createLunaApp } from '@laraxgram/vue3'
 
 const config = { color: 'blue' }
 
@@ -292,7 +292,7 @@ export default createLunaApp({
 
       expect(transform(code)).toMatchInlineSnapshot(`
         "// Header comment
-        import { createLunaApp } from '@lunajs/vue3'
+        import { createLunaApp } from '@laraxgram/vue3'
 
         const config = { color: 'blue' }
 
@@ -313,35 +313,35 @@ export default createLunaApp({
 
   describe('pageGlobs', () => {
     it('returns default globs when no pages property', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp()`
 
       expect(transformFull(code)?.pageGlobs).toEqual(['./pages/**/*.vue', './Pages/**/*.vue'])
     })
 
     it('returns globs for custom directory', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: './Views' })`
 
       expect(transformFull(code)?.pageGlobs).toEqual(['./Views/**/*.vue'])
     })
 
     it('returns globs for custom directory via path option', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 export default createLunaApp({ pages: { path: './CustomPages' } })`
 
       expect(transformFull(code)?.pageGlobs).toEqual(['./CustomPages/**/*{.tsx,.jsx}'])
     })
 
     it('returns globs with custom extensions', () => {
-      const code = `import { createLunaApp } from '@lunajs/react'
+      const code = `import { createLunaApp } from '@laraxgram/react'
 export default createLunaApp({ pages: { path: './Pages', extension: '.tsx' } })`
 
       expect(transformFull(code)?.pageGlobs).toEqual(['./Pages/**/*.tsx'])
     })
 
     it('returns default globs for pages object without path', () => {
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 export default createLunaApp({ pages: { lazy: true } })`
 
       expect(transformFull(code)?.pageGlobs).toEqual(['./pages/**/*.vue', './Pages/**/*.vue'])

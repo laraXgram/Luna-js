@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { CancelToken, Errors, Page, PendingVisit, Progress } from '@lunajs/core'
-import { useForm, usePage } from '@lunajs/vue3'
+import { CancelToken, Errors, Page, PendingVisit, Progress } from '@laraxgram/luna'
+import { useForm, usePage } from '@laraxgram/vue3'
 
 declare global {
   interface Window {

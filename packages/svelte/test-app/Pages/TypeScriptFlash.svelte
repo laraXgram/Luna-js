@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  declare module '@lunajs/core' {
+  declare module '@laraxgram/luna' {
     export interface LunaConfig {
       flashDataType: {
         toast?: { type: 'success' | 'error'; message: string }
@@ -10,7 +10,7 @@
 
 <script lang="ts">
   // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-  import { router, page } from '@lunajs/svelte'
+  import { router, page } from '@laraxgram/svelte'
 
   // page.flash is always an object
   let flash = $derived(page.flash)

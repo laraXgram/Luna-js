@@ -1,5 +1,5 @@
-import { createLunaApp, type ResolvedComponent } from '@lunajs/svelte'
-import createServer from '@lunajs/svelte/server'
+import { createLunaApp, type ResolvedComponent } from '@laraxgram/svelte'
+import createServer from '@laraxgram/svelte/server'
 import { render } from 'svelte/server'
 
 createServer((page) =>

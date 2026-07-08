@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InfiniteScroll, router } from '@lunajs/vue3'
+import { InfiniteScroll, router } from '@laraxgram/vue3'
 import UserCard, { User } from './UserCard.vue'
 
 defineProps<{

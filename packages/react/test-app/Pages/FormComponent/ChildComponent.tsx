@@ -1,4 +1,4 @@
-import { Form } from '@lunajs/react'
+import { Form } from '@laraxgram/react'
 import { useMemo, useState } from 'react'
 
 const ChildElement = ({ name }: { name: string }) => {

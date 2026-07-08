@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, usePoll } from '@lunajs/vue3'
+import { Link, usePoll } from '@laraxgram/vue3'
 
 usePoll(500, {
   only: ['custom_prop'],

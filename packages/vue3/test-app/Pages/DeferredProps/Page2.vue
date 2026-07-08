@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred } from '@lunajs/vue3'
+import { Deferred } from '@laraxgram/vue3'
 
 defineProps<{
   baz?: string

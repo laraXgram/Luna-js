@@ -1,5 +1,5 @@
-import type { Method } from '@lunajs/core'
-import { usePage } from '@lunajs/react'
+import type { Method } from '@laraxgram/luna'
+import { usePage } from '@laraxgram/react'
 import { useEffect, useMemo } from 'react'
 import type { MulterFile } from '../types'
 

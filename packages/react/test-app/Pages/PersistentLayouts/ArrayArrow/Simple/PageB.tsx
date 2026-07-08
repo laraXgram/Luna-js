@@ -1,4 +1,4 @@
-import { Link, usePage } from '@lunajs/react'
+import { Link, usePage } from '@laraxgram/react'
 import SiteLayout from '@/Layouts/SiteLayout'
 
 const PageB = () => {

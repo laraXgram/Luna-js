@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page, useForm } from '@lunajs/svelte'
+  import { page, useForm } from '@laraxgram/svelte'
 
   const form = useForm({
     name: 'foo',

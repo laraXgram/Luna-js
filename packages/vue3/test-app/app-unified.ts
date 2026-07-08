@@ -1,5 +1,5 @@
-import type { VisitOptions } from '@lunajs/core'
-import { createLunaApp, router } from '@lunajs/vue3'
+import type { VisitOptions } from '@laraxgram/luna'
+import { createLunaApp, router } from '@laraxgram/vue3'
 import type { DefineComponent } from 'vue'
 
 window.testing = { Luna: router }

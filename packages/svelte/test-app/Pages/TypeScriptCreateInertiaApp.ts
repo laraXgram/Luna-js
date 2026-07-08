@@ -1,8 +1,8 @@
 // This file is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { createLunaApp, type ResolvedComponent } from '@lunajs/svelte'
+import { createLunaApp, type ResolvedComponent } from '@laraxgram/svelte'
 import { mount } from 'svelte'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     sharedPageProps: {
       auth: { user: { name: string } | null }

@@ -1,5 +1,5 @@
-import { createLunaApp } from '@lunajs/vue3'
-import createServer from '@lunajs/vue3/server'
+import { createLunaApp } from '@laraxgram/vue3'
+import createServer from '@laraxgram/vue3/server'
 import { createSSRApp, h, type DefineComponent } from 'vue'
 import { renderToString } from 'vue/server-renderer'
 

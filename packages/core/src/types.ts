@@ -70,9 +70,9 @@ export type DefaultLunaConfig = {
  * @example
  * ```ts
  * // global.d.ts
- * import '@lunajs/core'
+ * import '@laraxgram/luna'
  *
- * declare module '@lunajs/core' {
+ * declare module '@laraxgram/luna' {
  *   export interface LunaConfig {
  *     errorValueType: string[]
  *     flashDataType: {

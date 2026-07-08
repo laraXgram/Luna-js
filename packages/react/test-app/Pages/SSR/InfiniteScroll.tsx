@@ -1,4 +1,4 @@
-import { InfiniteScroll } from '@lunajs/react'
+import { InfiniteScroll } from '@laraxgram/react'
 
 export default ({ users }: { users: { data: { id: number; name: string }[] } }) => {
   return (

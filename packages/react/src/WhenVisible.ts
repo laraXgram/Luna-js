@@ -1,4 +1,4 @@
-import { ReloadOptions, router } from '@lunajs/core'
+import { ReloadOptions, router } from '@laraxgram/luna'
 import { get } from 'es-toolkit/compat'
 import { createElement, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import usePage from './usePage'

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { progress } from '@lunajs/vue3'
+import { progress } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 declare global {

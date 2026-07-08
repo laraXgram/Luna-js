@@ -1,4 +1,4 @@
-import { createLunaApp } from '@lunajs/vue3'
+import { createLunaApp } from '@laraxgram/vue3'
 import type { DefineComponent } from 'vue'
 
 // This file uses createLunaApp as a standalone expression (not exported)

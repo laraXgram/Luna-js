@@ -1,8 +1,8 @@
 <!-- @migration-task Error while migrating Svelte code: Cannot bind to constant
 https://svelte.dev/e/constant_binding -->
 <script lang="ts">
-  import type { Method, UrlMethodPair } from '@lunajs/core'
-  import { useForm } from '@lunajs/svelte'
+  import type { Method, UrlMethodPair } from '@laraxgram/luna'
+  import { useForm } from '@laraxgram/svelte'
 
   const wayfinderUrl = (): UrlMethodPair => ({
     url: '/precognition/default',

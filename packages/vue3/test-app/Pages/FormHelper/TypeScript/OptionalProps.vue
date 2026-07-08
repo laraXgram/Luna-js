@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { useForm } from '@lunajs/vue3'
+import { useForm } from '@laraxgram/vue3'
 
 interface LoginData {
   username: string

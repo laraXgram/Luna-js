@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { router, usePage } from '@lunajs/vue3'
+import { router, usePage } from '@laraxgram/vue3'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     flashDataType: {
       toast?: { type: 'success' | 'error'; message: string }

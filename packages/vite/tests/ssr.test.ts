@@ -772,11 +772,11 @@ describe('SSR', () => {
 
       plugin.configResolved!(createMockConfig(logger, false))
 
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({ resolve: (name) => name })`
       const result = plugin.transform!(code, 'app.ts', { ssr: true })
 
-      expect(result).toContain("import createServer from '@lunajs/vue3/server'")
+      expect(result).toContain("import createServer from '@laraxgram/vue3/server'")
       expect(result).toContain("import { renderToString } from 'vue/server-renderer'")
       expect(result).toContain('const render = await createLunaApp')
       expect(result).toContain('const renderPage = (page) => render(page, renderToString)')
@@ -793,11 +793,11 @@ createLunaApp({ resolve: (name) => name })`
 
       plugin.configResolved!(createMockConfig(logger, false))
 
-      const code = `import { createLunaApp } from '@lunajs/svelte'
+      const code = `import { createLunaApp } from '@laraxgram/svelte'
 createLunaApp({ resolve: (name) => name })`
       const result = plugin.transform!(code, 'app.ts', { ssr: true })
 
-      expect(result).toContain("import createServer from '@lunajs/svelte/server'")
+      expect(result).toContain("import createServer from '@laraxgram/svelte/server'")
       expect(result).toContain("import { render } from 'svelte/server'")
       expect(result).toContain('const renderPage = (page) => ssr(page, render)')
       expect(result).toContain('if (import.meta.env.PROD)')
@@ -813,7 +813,7 @@ createLunaApp({ resolve: (name) => name })`
 
       plugin.configResolved!(createMockConfig(logger, false))
 
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({})`
       const result = plugin.transform!(code, 'app.ts', { ssr: true })
 
@@ -828,7 +828,7 @@ createLunaApp({})`
 
       plugin.configResolved!({ ...createMockConfig(logger, false), command: 'serve' } as ResolvedConfig)
 
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({})`
       const result = plugin.transform!(code, 'app.ts', { ssr: true })
 
@@ -845,7 +845,7 @@ createLunaApp({})`
 
       plugin.configResolved!(createMockConfig(logger, false))
 
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({ resolve: (name) => name })`
       const result = plugin.transform!(code, 'app.ts', { ssr: false })
 
@@ -890,7 +890,7 @@ createLunaApp({ resolve: (name) => name })`
 
       plugin.configResolved!(createMockConfig(logger, false))
 
-      const code = `import { createLunaApp } from '@lunajs/vue3'
+      const code = `import { createLunaApp } from '@laraxgram/vue3'
 createLunaApp({ resolve: (name) => name })`
       const result = plugin.transform!(code, 'app.ts', { ssr: true })
 

@@ -1,7 +1,7 @@
-import { config as coreConfig } from '@lunajs/core'
+import { config as coreConfig } from '@laraxgram/luna'
 import type { ReactLunaAppConfig } from './types'
 
-export { http, progress, router } from '@lunajs/core'
+export { http, progress, router } from '@laraxgram/luna'
 export { default as App } from './App'
 export { default as createLunaApp } from './createLunaApp'
 export { default as Deferred } from './Deferred'

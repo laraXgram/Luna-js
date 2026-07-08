@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, setLayoutProps } from '@lunajs/vue3'
+import { Link, setLayoutProps } from '@laraxgram/vue3'
 import { ref, watch } from 'vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 

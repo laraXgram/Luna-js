@@ -18,8 +18,8 @@
     "vue-tsc": "^3.2.5"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
-    "@lunajs/vite": "workspace:*",
-    "@lunajs/vue3": "workspace:*"
+    "@laraxgram/luna": "workspace:*",
+    "@laraxgram/vite": "workspace:*",
+    "@laraxgram/vue3": "workspace:*"
   }
 }

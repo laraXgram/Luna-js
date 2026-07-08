@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form, Link } from '@lunajs/vue3'
+import { Form, Link } from '@laraxgram/vue3'
 
 defineProps({
   lastLoaded: Number,

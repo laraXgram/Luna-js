@@ -1,7 +1,7 @@
 <!-- This component is used for checking the TypeScript implementation; there is no Playwright test depending on it. -->
 <script lang="ts">
-  import type { FormComponentOnSubmitCompleteArguments } from '@lunajs/core'
-  import { createForm } from '@lunajs/svelte'
+  import type { FormComponentOnSubmitCompleteArguments } from '@laraxgram/luna'
+  import { createForm } from '@laraxgram/svelte'
 
   interface UserForm {
     name: string

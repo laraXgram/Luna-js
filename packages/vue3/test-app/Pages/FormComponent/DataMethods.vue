@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { FormDataConvertible } from '@lunajs/core'
-import { Form } from '@lunajs/vue3'
+import { FormDataConvertible } from '@laraxgram/luna'
+import { Form } from '@laraxgram/vue3'
 
 function testGetData(getData: () => Record<string, FormDataConvertible>) {
   const data = getData()

@@ -1,7 +1,7 @@
-import { config as coreConfig } from '@lunajs/core'
+import { config as coreConfig } from '@laraxgram/luna'
 import type { SvelteLunaAppConfig } from './types'
 
-export { http, progress, router } from '@lunajs/core'
+export { http, progress, router } from '@laraxgram/luna'
 export { default as App } from './components/App.svelte'
 export { createForm } from './components/createForm'
 export { default as Deferred } from './components/Deferred.svelte'

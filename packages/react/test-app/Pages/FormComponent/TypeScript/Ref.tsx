@@ -1,6 +1,6 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { FormComponentRef } from '@lunajs/core'
-import { Form } from '@lunajs/react'
+import { FormComponentRef } from '@laraxgram/luna'
+import { Form } from '@laraxgram/react'
 import { useRef } from 'react'
 
 interface UserForm {

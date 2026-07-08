@@ -1,4 +1,4 @@
-import { HeadManager } from '@lunajs/core'
+import { HeadManager } from '@laraxgram/luna'
 import { createContext } from 'react'
 
 const headContext = createContext<HeadManager | null>(null)

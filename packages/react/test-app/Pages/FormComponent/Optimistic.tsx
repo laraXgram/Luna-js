@@ -1,4 +1,4 @@
-import { Form } from '@lunajs/react'
+import { Form } from '@laraxgram/react'
 
 interface Todo {
   id: number

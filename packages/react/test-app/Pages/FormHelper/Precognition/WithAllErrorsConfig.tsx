@@ -1,4 +1,4 @@
-import { config, useForm } from '@lunajs/react'
+import { config, useForm } from '@laraxgram/react'
 
 export default () => {
   // Set global config for withAllErrors (no .withAllErrors() call on the form)

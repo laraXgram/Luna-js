@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, page } from '@lunajs/svelte'
+  import { router, page } from '@laraxgram/svelte'
 
   const setFlash = () => {
     router.flash({ foo: 'bar' })

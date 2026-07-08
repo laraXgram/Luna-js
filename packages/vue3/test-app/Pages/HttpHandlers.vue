@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { http, router } from '@lunajs/vue3'
+import { http, router } from '@laraxgram/vue3'
 import { onMounted, onUnmounted } from 'vue'
 
 declare global {

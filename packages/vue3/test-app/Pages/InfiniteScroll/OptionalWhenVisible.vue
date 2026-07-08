@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InfiniteScroll, WhenVisible } from '@lunajs/vue3'
+import { InfiniteScroll, WhenVisible } from '@laraxgram/vue3'
 import { User, default as UserCard } from './UserCard.vue'
 
 defineProps<{

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router } from '@lunajs/vue3'
+import { router } from '@laraxgram/vue3'
 
 const prefetchPage = () => {
   router.prefetch('/prefetch/swr/1', { method: 'get' }, { cacheFor: 5000 })

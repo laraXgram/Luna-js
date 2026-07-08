@@ -6,7 +6,7 @@ import {
   InfiniteScrollSlotProps,
   ReloadOptions,
   useInfiniteScroll,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { computed, defineComponent, Fragment, h, onMounted, onUnmounted, PropType, ref, SlotsType, watch } from 'vue'
 import { usePage } from './app'
 

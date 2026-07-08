@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-  import { router, page } from '@lunajs/svelte'
+  import { router, page } from '@laraxgram/svelte'
 
   window.messages = []
 

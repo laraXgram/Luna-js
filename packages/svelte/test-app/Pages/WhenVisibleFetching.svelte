@@ -1,5 +1,5 @@
 <script>
-  import { WhenVisible } from '@lunajs/svelte'
+  import { WhenVisible } from '@laraxgram/svelte'
 </script>
 
 <div style="margin-top: 5000px">

@@ -1,4 +1,4 @@
-import { router, usePage } from '@lunajs/react'
+import { router, usePage } from '@laraxgram/react'
 import { useEffect } from 'react'
 
 export default ({

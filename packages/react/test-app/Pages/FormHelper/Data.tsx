@@ -1,4 +1,4 @@
-import { useForm, usePage } from '@lunajs/react'
+import { useForm, usePage } from '@laraxgram/react'
 
 export default () => {
   const form = useForm({

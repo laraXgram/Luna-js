@@ -1,5 +1,5 @@
-import type { Method, QueryStringArrayFormatOption } from '@lunajs/core'
-import { Form } from '@lunajs/react'
+import type { Method, QueryStringArrayFormatOption } from '@laraxgram/luna'
+import { Form } from '@laraxgram/react'
 import { useMemo, useState } from 'react'
 import Article from './../Article'
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, Link } from '@lunajs/svelte'
+  import { router, Link } from '@laraxgram/svelte'
 
   interface Props {
     foo?: string

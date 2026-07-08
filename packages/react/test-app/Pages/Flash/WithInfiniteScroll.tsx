@@ -1,4 +1,4 @@
-import { InfiniteScroll, router, usePage } from '@lunajs/react'
+import { InfiniteScroll, router, usePage } from '@laraxgram/react'
 import { useRef, useState } from 'react'
 
 export default ({ users }: { users: { data: { id: number; name: string }[] } }) => {

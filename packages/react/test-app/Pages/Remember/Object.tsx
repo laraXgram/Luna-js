@@ -1,4 +1,4 @@
-import { Link, useRemember } from '@lunajs/react'
+import { Link, useRemember } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

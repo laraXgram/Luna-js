@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link, router } from '@lunajs/vue3'
+import { Head, Link, router } from '@laraxgram/vue3'
 import { getCurrentInstance } from 'vue'
 
 const props = defineProps({

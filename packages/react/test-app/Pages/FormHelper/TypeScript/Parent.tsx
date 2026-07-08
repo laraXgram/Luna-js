@@ -1,5 +1,5 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { useForm } from '@lunajs/react'
+import { useForm } from '@laraxgram/react'
 import Child from './Child'
 
 export default function Parent() {

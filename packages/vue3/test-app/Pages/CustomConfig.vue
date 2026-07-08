@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VisitOptions } from '@lunajs/core'
-import { config, Link, useForm, usePage } from '@lunajs/vue3'
+import { VisitOptions } from '@laraxgram/luna'
+import { config, Link, useForm, usePage } from '@laraxgram/vue3'
 
 const page = usePage()
 const form = useForm({})

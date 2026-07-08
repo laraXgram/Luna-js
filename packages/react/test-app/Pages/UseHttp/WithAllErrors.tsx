@@ -1,4 +1,4 @@
-import { useHttp } from '@lunajs/react'
+import { useHttp } from '@laraxgram/react'
 
 interface ValidateResponse {
   success: boolean

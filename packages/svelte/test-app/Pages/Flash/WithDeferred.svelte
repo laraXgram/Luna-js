@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred, page, router } from '@lunajs/svelte'
+  import { Deferred, page, router } from '@laraxgram/svelte'
 
   interface Props {
     data: string | undefined

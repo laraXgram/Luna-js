@@ -1,4 +1,4 @@
-import { Form, Link } from '@lunajs/react'
+import { Form, Link } from '@laraxgram/react'
 
 export default ({ lastLoaded, propType }: { lastLoaded: number; propType: string }) => {
   return (

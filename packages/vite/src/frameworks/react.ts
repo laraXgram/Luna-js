@@ -7,7 +7,7 @@
  * The SSR template shows what the plugin generates. For a user's SSR entry:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/react'
+ * import { createLunaApp } from '@laraxgram/react'
  *
  * createLunaApp({
  *   resolve: (name) => resolvePageComponent(name),
@@ -17,8 +17,8 @@
  * In production, the plugin transforms it to:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/react'
- * import createServer from '@lunajs/react/server'
+ * import { createLunaApp } from '@laraxgram/react'
+ * import createServer from '@laraxgram/react/server'
  * import { renderToString } from 'react-dom/server'
  *
  * const render = await createLunaApp({
@@ -35,7 +35,7 @@ import type { FrameworkConfig } from '../types'
 
 export const config: FrameworkConfig = {
   // Package name used to detect React usage via import statements
-  package: '@lunajs/react',
+  package: '@laraxgram/react',
 
   // React components can use either .tsx (TypeScript) or .jsx
   // The plugin tries .tsx first, then falls back to .jsx
@@ -47,7 +47,7 @@ export const config: FrameworkConfig = {
   // SSR template that wraps the createLunaApp call with server bootstrap code
   // Uses import.meta.env.PROD to skip the standalone server in dev mode
   ssr: (configureCall, options) => `
-import createServer from '@lunajs/react/server'
+import createServer from '@laraxgram/react/server'
 import { renderToString } from 'react-dom/server'
 
 const render = await ${configureCall}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, useForm } from '@lunajs/svelte'
+  import { router, useForm } from '@laraxgram/svelte'
 
   interface Todo {
     id: number

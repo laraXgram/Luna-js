@@ -1,4 +1,4 @@
-import { WhenVisible, usePage } from '@lunajs/react'
+import { WhenVisible, usePage } from '@laraxgram/react'
 
 const Visitors = () => {
   const { stats } = usePage<{ stats?: { visitors: number } }>().props

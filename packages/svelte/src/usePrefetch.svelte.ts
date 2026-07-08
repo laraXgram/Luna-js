@@ -1,4 +1,4 @@
-import { router, type VisitOptions } from '@lunajs/core'
+import { router, type VisitOptions } from '@laraxgram/luna'
 import { onDestroy, onMount } from 'svelte'
 
 export default function usePrefetch(options: VisitOptions = {}) {

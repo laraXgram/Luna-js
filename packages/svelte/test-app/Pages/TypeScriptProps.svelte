@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  declare module '@lunajs/core' {
+  declare module '@laraxgram/luna' {
     export interface LunaConfig {
       sharedPageProps: {
         auth: { user: { name: string } | null }
@@ -10,7 +10,7 @@
 
 <script lang="ts">
   // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-  import { router, usePage } from '@lunajs/svelte'
+  import { router, usePage } from '@laraxgram/svelte'
 
   type PageProps = {
     posts: { id: number; title: string }[]

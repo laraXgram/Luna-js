@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfiniteScroll } from '@lunajs/svelte'
+  import { InfiniteScroll } from '@laraxgram/svelte'
   import { type User } from './UserCard.svelte'
 
   interface Props {

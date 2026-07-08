@@ -1,4 +1,4 @@
-import { getScrollableParent } from '@lunajs/core'
+import { getScrollableParent } from '@laraxgram/luna'
 import { useEffect, useRef, useState } from 'react'
 
 export default () => {

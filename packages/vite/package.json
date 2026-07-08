@@ -1,6 +1,6 @@
 {
-  "name": "@lunajs/vite",
-  "version": "3.6.1",
+  "name": "@laraxgram/vite",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Vite plugin for Luna.js with SSR dev mode support.",
   "repository": {
@@ -33,7 +33,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
+    "@laraxgram/luna": "workspace:*",
     "tinyglobby": "^0.2.15"
   },
   "peerDependencies": {

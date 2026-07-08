@@ -1,4 +1,4 @@
-import { router, VisitOptions } from '@lunajs/core'
+import { router, VisitOptions } from '@laraxgram/luna'
 import { useEffect, useState } from 'react'
 
 export default function usePrefetch(options: VisitOptions = {}): {

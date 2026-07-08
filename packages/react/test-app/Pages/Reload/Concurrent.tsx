@@ -1,4 +1,4 @@
-import { router, usePage } from '@lunajs/react'
+import { router, usePage } from '@laraxgram/react'
 
 export default () => {
   const { foo, bar } = usePage<{ foo?: string; bar?: string }>().props

@@ -25,9 +25,9 @@ const frameworks: FrameworkConfig[] = [vue, react, svelte]
  *
  * Example:
  * {
- *   '@lunajs/vue3': { package: '@lunajs/vue3', extensions: ['.vue'], ... },
- *   '@lunajs/react': { package: '@lunajs/react', extensions: ['.tsx', '.jsx'], ... },
- *   '@lunajs/svelte': { package: '@lunajs/svelte', extensions: ['.svelte'], ... }
+ *   '@laraxgram/vue3': { package: '@laraxgram/vue3', extensions: ['.vue'], ... },
+ *   '@laraxgram/react': { package: '@laraxgram/react', extensions: ['.tsx', '.jsx'], ... },
+ *   '@laraxgram/svelte': { package: '@laraxgram/svelte', extensions: ['.svelte'], ... }
  * }
  */
 export const defaultFrameworks: Record<string, FrameworkConfig> = Object.fromEntries(

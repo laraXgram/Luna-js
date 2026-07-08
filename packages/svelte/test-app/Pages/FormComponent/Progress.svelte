@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
   import { onMount, onDestroy } from 'svelte'
 
   let showProgress: boolean | undefined = $state(undefined)

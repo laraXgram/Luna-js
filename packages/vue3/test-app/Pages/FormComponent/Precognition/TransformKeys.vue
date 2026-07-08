@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form } from '@lunajs/vue3'
+import { Form } from '@laraxgram/vue3'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const transformData = (data: Record<string, any>) => {

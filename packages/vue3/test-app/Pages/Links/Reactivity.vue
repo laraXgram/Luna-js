@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { CacheForOption, LinkPrefetchOption, Method } from '@lunajs/core'
-import { Link } from '@lunajs/vue3'
+import { CacheForOption, LinkPrefetchOption, Method } from '@laraxgram/luna'
+import { Link } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const method = ref<Method>('get')

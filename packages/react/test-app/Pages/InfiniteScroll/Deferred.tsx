@@ -1,4 +1,4 @@
-import { Deferred, InfiniteScroll, usePage } from '@lunajs/react'
+import { Deferred, InfiniteScroll, usePage } from '@laraxgram/react'
 import UserCard, { User } from './UserCard'
 
 const Users = () => {

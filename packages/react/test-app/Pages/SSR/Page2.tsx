@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 
 export default ({ navigatedTo }: { navigatedTo: boolean }) => (
   <div>

@@ -1,4 +1,4 @@
-import { usePoll } from '@lunajs/react'
+import { usePoll } from '@laraxgram/react'
 import { useLayoutEffect, useState } from 'react'
 
 export default () => {

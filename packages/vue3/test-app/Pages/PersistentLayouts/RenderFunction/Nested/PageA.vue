@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@lunajs/vue3'
+import { Link } from '@laraxgram/vue3'
 import type { Component, VNode } from 'vue'
 import NestedLayout from '@/Layouts/NestedLayout.vue'
 import SiteLayout from '@/Layouts/SiteLayout.vue'

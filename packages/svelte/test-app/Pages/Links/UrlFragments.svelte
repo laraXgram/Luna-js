@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna } from '@lunajs/svelte'
+  import { luna } from '@laraxgram/svelte'
 
   let documentScrollTop = $state(0)
   let documentScrollLeft = $state(0)

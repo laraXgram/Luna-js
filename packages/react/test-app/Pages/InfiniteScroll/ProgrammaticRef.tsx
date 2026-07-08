@@ -1,5 +1,5 @@
-import { InfiniteScrollRef } from '@lunajs/core'
-import { InfiniteScroll } from '@lunajs/react'
+import { InfiniteScrollRef } from '@laraxgram/luna'
+import { InfiniteScroll } from '@laraxgram/react'
 import { useCallback, useEffect, useState } from 'react'
 import UserCard, { User } from './UserCard'
 

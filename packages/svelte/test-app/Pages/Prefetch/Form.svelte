@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, page, useForm } from '@lunajs/svelte'
+  import { Link, page, useForm } from '@laraxgram/svelte'
 
   const form = useForm({})
 

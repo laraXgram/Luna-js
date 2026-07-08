@@ -1,5 +1,5 @@
 <script>
-  import { Link } from '@lunajs/svelte'
+  import { Link } from '@laraxgram/svelte'
 
   let { pageNumber, largeData } = $props()
 </script>

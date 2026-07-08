@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { isUrlMethodPair, resolveUrlMethodPairComponent } from '@lunajs/core'
-  import type { LinkComponentBaseProps } from '@lunajs/core'
+  import { isUrlMethodPair, resolveUrlMethodPairComponent } from '@laraxgram/luna'
+  import type { LinkComponentBaseProps } from '@laraxgram/luna'
   import { luna } from '../index'
 
   interface Props {

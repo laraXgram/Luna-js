@@ -1,4 +1,4 @@
-import { type LayoutCallbackReturn, type Page, type SharedPageProps } from '@lunajs/core'
+import { type LayoutCallbackReturn, type Page, type SharedPageProps } from '@laraxgram/luna'
 import type { Component } from 'svelte'
 import type { RenderFunction, RenderProps } from './components/Render.svelte'
 

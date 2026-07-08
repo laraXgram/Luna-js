@@ -1,4 +1,4 @@
-import { Link, router, usePoll } from '@lunajs/react'
+import { Link, router, usePoll } from '@laraxgram/react'
 
 export default ({ counter, last_received }: { counter: number; last_received: number | null }) => {
   usePoll(300, () => ({

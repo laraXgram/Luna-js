@@ -8,8 +8,8 @@ import type {
   UrlMethodPair,
   UseFormTransformCallback,
   UseFormWithPrecognitionArguments,
-} from '@lunajs/core'
-import { router, UseFormUtils } from '@lunajs/core'
+} from '@laraxgram/luna'
+import { router, UseFormUtils } from '@laraxgram/luna'
 import { cloneDeep, isEqual } from 'es-toolkit'
 import { get, has, set } from 'es-toolkit/compat'
 import type { NamedInputEvent, ValidationConfig, Validator } from 'laravel-precognition'

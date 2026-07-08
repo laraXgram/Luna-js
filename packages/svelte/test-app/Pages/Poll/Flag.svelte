@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, usePoll } from '@lunajs/svelte'
+  import { router, usePoll } from '@laraxgram/svelte'
 
   let pollFlag = $state('pending')
   let reloadFlag = $state('pending')

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form } from '@lunajs/vue3'
+import { Form } from '@laraxgram/vue3'
 import ChildComponent from './ChildComponent.vue'
 import NestedComponent from './NestedComponent.vue'
 import OutsideFormComponent from './OutsideFormComponent.vue'

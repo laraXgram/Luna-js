@@ -1,5 +1,5 @@
-import type { VisitOptions } from '@lunajs/core'
-import { createLunaApp, type ResolvedComponent, router } from '@lunajs/react'
+import type { VisitOptions } from '@laraxgram/luna'
+import { createLunaApp, type ResolvedComponent, router } from '@laraxgram/react'
 import { createElement } from 'react'
 import { WithAppContext } from './Pages/SSR/WithApp'
 

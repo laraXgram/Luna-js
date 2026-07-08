@@ -14,7 +14,7 @@
     isUrlMethodPair,
     resolveUrlMethodPairComponent,
     UseFormUtils,
-  } from '@lunajs/core'
+  } from '@laraxgram/luna'
   import { isEqual } from 'es-toolkit'
   import { type NamedInputEvent, type ValidationConfig, type Validator } from 'laravel-precognition'
   import { onMount } from 'svelte'

@@ -12,8 +12,8 @@ body:
         - You are using **supported versions** of Node.js, PHP, and other server-side dependencies
   - type: input
     attributes:
-      label: '@lunajs/react Version'
-      description: Provide the version of `@lunajs/react` you are using.
+      label: '@laraxgram/react Version'
+      description: Provide the version of `@laraxgram/react` you are using.
       placeholder: 1.0.0
     validations:
       required: true

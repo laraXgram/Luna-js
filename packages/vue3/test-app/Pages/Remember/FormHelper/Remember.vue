@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, useForm } from '@lunajs/vue3'
+import { Link, useForm } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const form = useForm('form', {

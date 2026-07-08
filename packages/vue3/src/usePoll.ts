@@ -1,4 +1,4 @@
-import { PollOptions, ReloadOptions, router } from '@lunajs/core'
+import { PollOptions, ReloadOptions, router } from '@laraxgram/luna'
 import { onMounted, onUnmounted } from 'vue'
 
 export default function usePoll(

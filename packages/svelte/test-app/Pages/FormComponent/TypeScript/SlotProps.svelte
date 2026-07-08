@@ -4,7 +4,7 @@
   See https://github.com/sveltejs/language-tools/issues/1026
 -->
 <script lang="ts">
-  import { createForm } from '@lunajs/svelte'
+  import { createForm } from '@laraxgram/svelte'
 
   interface UserForm {
     name: string

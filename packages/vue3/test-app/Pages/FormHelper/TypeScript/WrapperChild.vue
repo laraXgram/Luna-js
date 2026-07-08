@@ -1,6 +1,6 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts" generic="T extends Record<string, any>">
-import { useForm } from '@lunajs/vue3'
+import { useForm } from '@laraxgram/vue3'
 
 const props = defineProps<{ data: T }>()
 

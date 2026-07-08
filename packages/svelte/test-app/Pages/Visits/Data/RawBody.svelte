@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { http } from '@lunajs/svelte'
+  import { http } from '@laraxgram/svelte'
 
   const send = async (data: unknown, headers?: Record<string, string>) => {
     const response = await http.getClient().request({

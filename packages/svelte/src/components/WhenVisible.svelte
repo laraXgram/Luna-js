@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, type ReloadOptions } from '@lunajs/core'
+  import { router, type ReloadOptions } from '@laraxgram/luna'
   import { get } from 'es-toolkit/compat'
   import { usePage } from '../page.svelte'
 

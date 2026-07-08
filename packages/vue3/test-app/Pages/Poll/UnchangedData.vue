@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePoll } from '@lunajs/vue3'
+import { usePoll } from '@laraxgram/vue3'
 import { onMounted, ref } from 'vue'
 
 const replaceStateCalls = ref(0)

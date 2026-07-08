@@ -1,4 +1,4 @@
-import { Page } from '@lunajs/core'
+import { Page } from '@laraxgram/luna'
 import { createContext } from 'react'
 
 const pageContext = createContext<Page | null>(null)

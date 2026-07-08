@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRemember } from '@lunajs/vue3'
+import { useRemember } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const untracked = ref('')

@@ -1,4 +1,4 @@
-import { Link, usePage } from '@lunajs/react'
+import { Link, usePage } from '@laraxgram/react'
 
 export default ({ user, items, count }: { user: { name: string; email: string }; items: string[]; count: number }) => {
   const page = usePage()

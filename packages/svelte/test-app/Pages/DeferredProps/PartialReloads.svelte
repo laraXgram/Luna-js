@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred, router } from '@lunajs/svelte'
+  import { Deferred, router } from '@laraxgram/svelte'
 
   interface Props {
     foo: { timestamp: string } | undefined

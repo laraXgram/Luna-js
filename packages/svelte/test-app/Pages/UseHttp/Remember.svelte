@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, useHttp } from '@lunajs/svelte'
+  import { Link, useHttp } from '@laraxgram/svelte'
 
   const form = useHttp('useHttpRemember', {
     name: 'initial',

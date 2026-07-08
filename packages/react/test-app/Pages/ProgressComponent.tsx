@@ -1,4 +1,4 @@
-import { progress } from '@lunajs/react'
+import { progress } from '@laraxgram/react'
 import { useState } from 'react'
 
 declare global {

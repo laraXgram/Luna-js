@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Method } from '@lunajs/core'
-import { Link } from '@lunajs/vue3'
+import type { Method } from '@laraxgram/luna'
+import { Link } from '@laraxgram/vue3'
 
 defineProps<{
   method: Method

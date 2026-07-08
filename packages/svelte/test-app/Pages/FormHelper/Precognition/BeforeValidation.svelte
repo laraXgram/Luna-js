@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useForm } from '@lunajs/svelte'
+  import { useForm } from '@laraxgram/svelte'
   import { isEqual } from 'es-toolkit'
 
   const form = useForm({

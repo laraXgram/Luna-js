@@ -1,5 +1,5 @@
 <script>
-  import { WhenVisible } from '@lunajs/svelte'
+  import { WhenVisible } from '@laraxgram/svelte'
 
   let { lazyData } = $props()
 

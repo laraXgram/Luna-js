@@ -11,7 +11,7 @@ import {
   shouldIntercept,
   shouldNavigate,
   VisitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { createElement, ElementType, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import { config } from '.'
 

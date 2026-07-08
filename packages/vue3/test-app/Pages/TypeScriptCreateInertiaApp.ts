@@ -1,9 +1,9 @@
 // This file is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { createLunaApp } from '@lunajs/vue3'
+import { createLunaApp } from '@laraxgram/vue3'
 import type { DefineComponent } from 'vue'
 import { createApp, h } from 'vue'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     sharedPageProps: {
       auth: { user: { name: string } | null }

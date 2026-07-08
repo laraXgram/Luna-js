@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 import { useEffect, useRef, useState } from 'react'
 
 export default () => {

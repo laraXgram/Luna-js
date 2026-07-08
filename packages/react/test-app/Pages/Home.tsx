@@ -1,4 +1,4 @@
-import { Head, Link, router } from '@lunajs/react'
+import { Head, Link, router } from '@laraxgram/react'
 
 export default (props: { example: string }) => {
   const visitsMethod = (e: React.MouseEvent) => {

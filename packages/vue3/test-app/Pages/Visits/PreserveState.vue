@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Page } from '@lunajs/core'
-import { router } from '@lunajs/vue3'
+import type { Page } from '@laraxgram/luna'
+import { router } from '@laraxgram/vue3'
 import { getCurrentInstance, onMounted } from 'vue'
 
 defineProps({

@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 import { useRef } from 'react'
 
 export default ({ page }: { page: number }) => {

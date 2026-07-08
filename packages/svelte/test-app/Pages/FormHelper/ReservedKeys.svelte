@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useForm } from '@lunajs/svelte'
+  import { useForm } from '@laraxgram/svelte'
 
   // @ts-expect-error - Intentionally using reserved key to test validation
   const form = useForm({ progress: 0 })

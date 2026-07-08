@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { usePage } from '@lunajs/svelte'
+  import { usePage } from '@laraxgram/svelte'
 
   interface Props {
     parentPage: ReturnType<typeof usePage>

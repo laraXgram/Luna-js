@@ -1,4 +1,4 @@
-import { Deferred, Link, usePage } from '@lunajs/react'
+import { Deferred, Link, usePage } from '@laraxgram/react'
 
 const FastProp = () => {
   const { fastProp } = usePage<{ fastProp?: string }>().props

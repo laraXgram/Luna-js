@@ -7,7 +7,7 @@
  * The SSR template shows what the plugin generates. For a user's SSR entry:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/vue3'
+ * import { createLunaApp } from '@laraxgram/vue3'
  *
  * createLunaApp({
  *   resolve: (name) => resolvePageComponent(name),
@@ -17,8 +17,8 @@
  * The plugin transforms it to:
  *
  * ```js
- * import { createLunaApp } from '@lunajs/vue3'
- * import createServer from '@lunajs/vue3/server'
+ * import { createLunaApp } from '@laraxgram/vue3'
+ * import createServer from '@laraxgram/vue3/server'
  * import { renderToString } from 'vue/server-renderer'
  *
  * const render = await createLunaApp({
@@ -40,7 +40,7 @@ import type { FrameworkConfig } from '../types'
 
 export const config: FrameworkConfig = {
   // Package name used to detect Vue usage via import statements
-  package: '@lunajs/vue3',
+  package: '@laraxgram/vue3',
 
   // Vue single-file components use .vue extension
   extensions: ['.vue'],
@@ -51,7 +51,7 @@ export const config: FrameworkConfig = {
   // SSR template that wraps the createLunaApp call with server bootstrap code
   // Uses import.meta.env.PROD to skip the standalone server in dev mode
   ssr: (configureCall, options) => `
-import createServer from '@lunajs/vue3/server'
+import createServer from '@laraxgram/vue3/server'
 import { renderToString } from 'vue/server-renderer'
 
 const render = await ${configureCall}

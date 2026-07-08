@@ -1,4 +1,4 @@
-import { Link, usePoll } from '@lunajs/react'
+import { Link, usePoll } from '@laraxgram/react'
 
 export default () => {
   usePoll(500, {

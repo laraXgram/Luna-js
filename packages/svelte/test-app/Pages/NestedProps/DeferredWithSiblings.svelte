@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred } from '@lunajs/svelte'
+  import { Deferred } from '@laraxgram/svelte'
 
   let {
     auth,

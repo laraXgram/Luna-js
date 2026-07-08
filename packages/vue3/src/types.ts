@@ -6,7 +6,7 @@ import {
   PageProps,
   router,
   SharedPageProps,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { Component, DefineComponent, VNode } from 'vue'
 import useForm from './useForm'
 
@@ -16,7 +16,7 @@ export type VueLunaAppConfig = {}
 export type LayoutCallback = (props: SharedPageProps) => LayoutCallbackReturn<Component>
 export type LayoutRenderFunction = (h: (component: Component, children: Component[]) => VNode, page: Component) => VNode
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface Router {
     form: typeof useForm
   }

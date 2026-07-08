@@ -1,4 +1,4 @@
-import { setLayoutProps } from '@lunajs/react'
+import { setLayoutProps } from '@laraxgram/react'
 import AppLayout from '../../Layouts/AppLayout'
 import ContentLayout from '../../Layouts/ContentLayout'
 

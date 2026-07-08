@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred, Link } from '@lunajs/svelte'
+  import { Deferred, Link } from '@laraxgram/svelte'
 
   interface Props {
     foo: string | undefined

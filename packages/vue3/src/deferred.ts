@@ -1,4 +1,4 @@
-import { isSameUrlWithoutQueryOrHash, partialReloadRequestsSomeProps, router } from '@lunajs/core'
+import { isSameUrlWithoutQueryOrHash, partialReloadRequestsSomeProps, router } from '@laraxgram/luna'
 import { get } from 'es-toolkit/compat'
 import { computed, defineComponent, Fragment, h, onMounted, onUnmounted, ref, type SlotsType } from 'vue'
 import { usePage } from './app'

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfiniteScroll, page, router } from '@lunajs/svelte'
+  import { InfiniteScroll, page, router } from '@laraxgram/svelte'
 
   interface Props {
     users: { data: { id: number; name: string }[] }

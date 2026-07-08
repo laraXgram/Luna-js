@@ -13,7 +13,7 @@ import {
   resolveUrlMethodPairComponent,
   UseFormUtils,
   VisitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { isEqual } from 'es-toolkit'
 import { NamedInputEvent, ValidationConfig } from 'laravel-precognition'
 import React, {

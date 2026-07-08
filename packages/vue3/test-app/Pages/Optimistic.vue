@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, useForm } from '@lunajs/vue3'
+import { router, useForm } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 interface Todo {

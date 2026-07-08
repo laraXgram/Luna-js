@@ -1,5 +1,5 @@
-import type { Page } from '@lunajs/core'
-import { Link } from '@lunajs/react'
+import type { Page } from '@laraxgram/luna'
+import { Link } from '@laraxgram/react'
 import WithoutScrollRegion from '@/Layouts/WithoutScrollRegion.jsx'
 
 const PreserveScrollFalse = ({ foo = 'default' }: { foo?: string }) => {

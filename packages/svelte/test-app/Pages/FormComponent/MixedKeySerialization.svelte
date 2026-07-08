@@ -1,5 +1,5 @@
 <script>
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
 </script>
 
 <div>

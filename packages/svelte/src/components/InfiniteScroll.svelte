@@ -7,7 +7,7 @@
     type InfiniteScrollSlotProps,
     type ReloadOptions,
     useInfiniteScroll,
-  } from '@lunajs/core'
+  } from '@laraxgram/luna'
   import { onDestroy, onMount } from 'svelte'
   import { usePage } from '../page.svelte'
 

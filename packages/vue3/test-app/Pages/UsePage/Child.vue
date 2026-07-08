@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePage } from '@lunajs/vue3'
+import { usePage } from '@laraxgram/vue3'
 
 interface Props {
   parentPage: object

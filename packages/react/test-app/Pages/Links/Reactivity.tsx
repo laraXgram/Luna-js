@@ -1,5 +1,5 @@
-import type { CacheForOption, LinkPrefetchOption, Method } from '@lunajs/core'
-import { Link } from '@lunajs/react'
+import type { CacheForOption, LinkPrefetchOption, Method } from '@laraxgram/luna'
+import { Link } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

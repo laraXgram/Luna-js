@@ -1,6 +1,6 @@
 <!-- This component is used for checking the TypeScript implementation; there is no Playwright test depending on it. -->
 <script setup lang="ts">
-import { useFormContext } from '@lunajs/vue3'
+import { useFormContext } from '@laraxgram/vue3'
 
 interface UserForm {
   name: string

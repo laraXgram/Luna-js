@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, router, usePoll } from '@lunajs/vue3'
+import { Link, router, usePoll } from '@laraxgram/vue3'
 
 const props = defineProps<{
   counter: number

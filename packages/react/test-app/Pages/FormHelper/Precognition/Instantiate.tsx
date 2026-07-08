@@ -1,5 +1,5 @@
-import { Method, UrlMethodPair } from '@lunajs/core'
-import { useForm } from '@lunajs/react'
+import { Method, UrlMethodPair } from '@laraxgram/luna'
+import { useForm } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

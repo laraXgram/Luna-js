@@ -1,4 +1,4 @@
-import { Form } from '@lunajs/react'
+import { Form } from '@laraxgram/react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const transformData = (data: Record<string, any>) => {

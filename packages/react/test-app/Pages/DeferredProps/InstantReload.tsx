@@ -1,4 +1,4 @@
-import { Deferred, router } from '@lunajs/react'
+import { Deferred, router } from '@laraxgram/react'
 import { useEffect } from 'react'
 
 export default ({ foo, bar }: { foo?: { text: string }; bar?: { text: string } }) => {

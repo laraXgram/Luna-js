@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 
 let originalScrollTo: typeof window.scrollTo | null = null
 

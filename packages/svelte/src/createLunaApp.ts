@@ -13,7 +13,7 @@ import {
   type Page,
   type PageProps,
   type SharedPageProps,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { hydrate, mount } from 'svelte'
 import App, { type LunaAppProps } from './components/App.svelte'
 import { config } from './index'

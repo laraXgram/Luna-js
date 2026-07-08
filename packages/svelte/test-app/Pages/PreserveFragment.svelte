@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { luna, usePage } from '@lunajs/svelte'
-  import { router } from '@lunajs/svelte'
+  import { luna, usePage } from '@laraxgram/svelte'
+  import { router } from '@laraxgram/svelte'
 
   const page = usePage()
 

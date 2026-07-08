@@ -1,4 +1,4 @@
-import { Link, router } from '@lunajs/react'
+import { Link, router } from '@laraxgram/react'
 
 interface PreserveUrlProps {
   foo?: string

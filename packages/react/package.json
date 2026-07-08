@@ -1,5 +1,5 @@
 {
-  "name": "@lunajs/react",
+  "name": "@laraxgram/react",
   "version": "3.6.1",
   "license": "MIT",
   "description": "The React adapter for Luna.js",
@@ -61,7 +61,7 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
+    "@laraxgram/luna": "workspace:*",
     "es-toolkit": "^1.33.0",
     "laravel-precognition": "^2.0.0"
   }

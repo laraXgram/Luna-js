@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-  import { progress } from '@lunajs/svelte'
+  import { progress } from '@laraxgram/svelte'
 
   window.progressTests = []
 

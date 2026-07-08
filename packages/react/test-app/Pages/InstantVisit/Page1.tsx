@@ -1,4 +1,4 @@
-import { Link, router } from '@lunajs/react'
+import { Link, router } from '@laraxgram/react'
 
 export default ({ foo, auth, errors }: { foo: string; auth?: { user: string }; errors?: Record<string, string> }) => {
   const visitWithComponent = () => {

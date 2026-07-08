@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Page } from '@lunajs/core'
-import { Link } from '@lunajs/vue3'
+import type { Page } from '@laraxgram/luna'
+import { Link } from '@laraxgram/vue3'
 import { getCurrentInstance, onMounted } from 'vue'
 import WithoutScrollRegion from '../../Layouts/WithoutScrollRegion.vue'
 

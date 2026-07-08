@@ -1,5 +1,5 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import type { LunaFormProps } from '@lunajs/react'
+import type { LunaFormProps } from '@laraxgram/react'
 
 interface ChildProps {
   form: LunaFormProps<{

@@ -1,4 +1,4 @@
-import { useForm, usePage, usePoll } from '@lunajs/react'
+import { useForm, usePage, usePoll } from '@laraxgram/react'
 
 export default ({ time }: { time: number }) => {
   const { errors } = usePage().props as { errors?: { name?: string } }

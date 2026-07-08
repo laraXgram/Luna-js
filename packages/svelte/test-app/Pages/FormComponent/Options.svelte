@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Method, QueryStringArrayFormatOption } from '@lunajs/core'
-  import { Form } from '@lunajs/svelte'
+  import type { Method, QueryStringArrayFormatOption } from '@laraxgram/luna'
+  import { Form } from '@laraxgram/svelte'
   import Article from '../Article.svelte'
 
   let only: string[] = $state([])

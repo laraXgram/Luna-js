@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, Form } from '@lunajs/svelte'
+  import { Link, Form } from '@laraxgram/svelte'
 
   let { lastLoaded, propType } = $props()
 </script>

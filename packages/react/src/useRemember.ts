@@ -1,4 +1,4 @@
-import { router } from '@lunajs/core'
+import { router } from '@laraxgram/luna'
 import { Dispatch, MutableRefObject, SetStateAction, useEffect, useState } from 'react'
 
 export default function useRemember<State>(

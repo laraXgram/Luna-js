@@ -1,4 +1,4 @@
-import { createLunaApp, router } from '@lunajs/vue3'
+import { createLunaApp, router } from '@laraxgram/vue3'
 
 window.testing = { Luna: router }
 

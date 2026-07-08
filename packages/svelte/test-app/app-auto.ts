@@ -1,4 +1,4 @@
-import { createLunaApp, router } from '@lunajs/svelte'
+import { createLunaApp, router } from '@laraxgram/svelte'
 
 window.testing = { Luna: router }
 

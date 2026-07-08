@@ -1,4 +1,4 @@
-import { ReloadOptions, router } from '@lunajs/core'
+import { ReloadOptions, router } from '@laraxgram/luna'
 import { get } from 'es-toolkit/compat'
 import { computed, defineComponent, h, nextTick, onUnmounted, PropType, ref, SlotsType, watch } from 'vue'
 import { usePage } from './app'

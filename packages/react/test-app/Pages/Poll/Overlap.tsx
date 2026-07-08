@@ -1,4 +1,4 @@
-import { usePoll } from '@lunajs/react'
+import { usePoll } from '@laraxgram/react'
 
 export default ({ mode, time }: { mode: string; time: number }) => {
   const params = new URLSearchParams(window.location.search)

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   const wayfinderObjectVisit = () => {
     router.visit({ url: '/dump/post', method: 'post' })

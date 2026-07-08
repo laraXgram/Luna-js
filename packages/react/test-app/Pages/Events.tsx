@@ -1,4 +1,4 @@
-import { Link, router, usePage } from '@lunajs/react'
+import { Link, router, usePage } from '@laraxgram/react'
 
 declare global {
   interface Window {

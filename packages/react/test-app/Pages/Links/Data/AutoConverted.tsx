@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 
 export default () => {
   const linkData = { file: new File([], 'example.jpg'), foo: 'bar' }

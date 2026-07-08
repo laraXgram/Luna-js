@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, page, usePage, useForm } from '@lunajs/svelte'
+  import { luna, page, usePage, useForm } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
 
   type PageProps = {

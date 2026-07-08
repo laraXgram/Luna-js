@@ -1,4 +1,4 @@
-import { http } from '@lunajs/react'
+import { http } from '@laraxgram/react'
 
 declare global {
   interface Window {

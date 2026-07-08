@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { WhenVisible, useForm } from '@lunajs/vue3'
+import { WhenVisible, useForm } from '@laraxgram/vue3'
 
 defineProps<{
   foo?: string

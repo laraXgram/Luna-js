@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page, router } from '@lunajs/svelte'
+  import { page, router } from '@laraxgram/svelte'
 
   interface Props {
     count: number

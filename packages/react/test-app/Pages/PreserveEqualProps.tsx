@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 import { useEffect, useState } from 'react'
 
 export default ({ nestedA, nestedB }: { nestedA: { count: number }; nestedB: { date: number } }) => {

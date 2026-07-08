@@ -1,4 +1,4 @@
-import { type Page, type PageProps, type SharedPageProps } from '@lunajs/core'
+import { type Page, type PageProps, type SharedPageProps } from '@laraxgram/luna'
 
 type SveltePage<TPageProps extends PageProps = PageProps> = Omit<Page<TPageProps & SharedPageProps>, 'props'> & {
   props: Page<TPageProps & SharedPageProps>['props'] & {

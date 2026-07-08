@@ -1,4 +1,4 @@
-import { Deferred, Link, usePage } from '@lunajs/react'
+import { Deferred, Link, usePage } from '@laraxgram/react'
 
 const Data = () => {
   const { data } = usePage<{ data?: string }>().props

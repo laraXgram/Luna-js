@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  declare module '@lunajs/core' {
+  declare module '@laraxgram/luna' {
     export interface LunaConfig {
       sharedPageProps: {
         auth: { user: { name: string } | null }
@@ -7,7 +7,7 @@
     }
   }
 
-  import type { LayoutCallback } from '@lunajs/svelte'
+  import type { LayoutCallback } from '@laraxgram/svelte'
   import AppLayout from '@/Layouts/AppLayout.svelte'
 
   export const layout: LayoutCallback = (props) => {

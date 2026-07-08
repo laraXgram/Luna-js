@@ -21,7 +21,7 @@
  * @example
  * ```ts
  * const template: SSRTemplate = (configureCall, options) => `
- *   import createServer from '@lunajs/vue3/server'
+ *   import createServer from '@laraxgram/vue3/server'
  *   import { renderToString } from 'vue/server-renderer'
  *
  *   const render = await ${configureCall}
@@ -58,7 +58,7 @@ export interface FrameworkConfig {
    * The npm package name that identifies this framework.
    * The plugin detects the framework by looking for imports from this package.
    *
-   * Examples: '@lunajs/vue3', '@lunajs/react', '@lunajs/svelte'
+   * Examples: '@laraxgram/vue3', '@laraxgram/react', '@laraxgram/svelte'
    */
   package: string
 

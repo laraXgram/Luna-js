@@ -1,4 +1,4 @@
-import { Link, useHttp } from '@lunajs/react'
+import { Link, useHttp } from '@laraxgram/react'
 
 export default () => {
   const form = useHttp('useHttpRemember', {

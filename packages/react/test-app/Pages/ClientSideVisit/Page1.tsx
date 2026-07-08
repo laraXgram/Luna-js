@@ -1,5 +1,5 @@
-import { Page } from '@lunajs/core'
-import { router } from '@lunajs/react'
+import { Page } from '@laraxgram/luna'
+import { router } from '@laraxgram/react'
 import { useState } from 'react'
 
 interface PageProps {

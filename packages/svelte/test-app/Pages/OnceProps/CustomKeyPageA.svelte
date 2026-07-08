@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link } from '@lunajs/svelte'
+  import { Link } from '@laraxgram/svelte'
 
   interface Props {
     userPermissions: string

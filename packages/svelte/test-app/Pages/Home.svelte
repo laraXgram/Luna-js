@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, page, router } from '@lunajs/svelte'
+  import { luna, page, router } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
 
   const visitsMethod = () => {

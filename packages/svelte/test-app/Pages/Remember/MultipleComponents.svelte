@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, useRemember } from '@lunajs/svelte'
+  import { luna, useRemember } from '@laraxgram/svelte'
   import ComponentA from '@/Pages/Remember/Components/ComponentA.svelte'
   import ComponentB from '@/Pages/Remember/Components/ComponentB.svelte'
 

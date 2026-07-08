@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link } from '@lunajs/vue3'
+import { Head, Link } from '@laraxgram/vue3'
 </script>
 
 <template>

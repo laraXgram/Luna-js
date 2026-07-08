@@ -1,4 +1,4 @@
-import { http, router } from '@lunajs/react'
+import { http, router } from '@laraxgram/react'
 import { useEffect } from 'react'
 
 declare global {

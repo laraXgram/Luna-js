@@ -1,4 +1,4 @@
-import { useForm } from '@lunajs/react'
+import { useForm } from '@laraxgram/react'
 
 export default () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

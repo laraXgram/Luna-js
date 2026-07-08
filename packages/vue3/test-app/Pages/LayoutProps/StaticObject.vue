@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@lunajs/vue3'
+import { Link } from '@laraxgram/vue3'
 
 defineOptions({
   layout: { title: 'Static Object Title', showSidebar: false },

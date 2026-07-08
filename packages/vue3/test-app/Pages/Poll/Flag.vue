@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, usePoll } from '@lunajs/vue3'
+import { router, usePoll } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const pollFlag = ref('pending')

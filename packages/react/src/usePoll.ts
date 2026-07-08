@@ -1,4 +1,4 @@
-import { PollOptions, ReloadOptions, router } from '@lunajs/core'
+import { PollOptions, ReloadOptions, router } from '@laraxgram/luna'
 import { useEffect, useRef } from 'react'
 
 export default function usePoll(

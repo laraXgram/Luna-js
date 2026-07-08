@@ -10,7 +10,7 @@ import {
   router,
   shouldIntercept,
   shouldNavigate,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { Component, computed, defineComponent, DefineComponent, h, onMounted, onUnmounted, PropType, ref } from 'vue'
 import { config } from '.'
 

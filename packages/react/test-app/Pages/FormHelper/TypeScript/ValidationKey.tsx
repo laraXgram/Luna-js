@@ -1,6 +1,6 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import type { FormDataConvertible } from '@lunajs/core'
-import type { LunaFormProps } from '@lunajs/react'
+import type { FormDataConvertible } from '@laraxgram/luna'
+import type { LunaFormProps } from '@laraxgram/react'
 
 const validation = <T extends Record<string, FormDataConvertible>>(errors: () => LunaFormProps<T>['errors']) => {
   type Key = keyof ReturnType<typeof errors>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Method } from '@lunajs/core'
-  import { page } from '@lunajs/svelte'
+  import type { Method } from '@laraxgram/luna'
+  import { page } from '@laraxgram/svelte'
   import type { MulterFile } from '../types'
 
   interface Props {

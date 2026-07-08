@@ -1,4 +1,4 @@
-import { createLayoutPropsStore, type LayoutProps, type NamedLayoutProps } from '@lunajs/core'
+import { createLayoutPropsStore, type LayoutProps, type NamedLayoutProps } from '@laraxgram/luna'
 import { ref } from 'vue'
 
 const store = createLayoutPropsStore()

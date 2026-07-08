@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, usePage } from '@lunajs/svelte'
+  import { luna, usePage } from '@laraxgram/svelte'
 
   interface Props {
     user: { name: string; email: string }

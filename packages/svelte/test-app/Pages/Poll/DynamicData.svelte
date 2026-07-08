@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, router, usePoll } from '@lunajs/svelte'
+  import { Link, router, usePoll } from '@laraxgram/svelte'
 
   let { counter, last_received } = $props()
 

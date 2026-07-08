@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { QueryStringArrayFormatOption } from '@lunajs/core'
-import { config, Form } from '@lunajs/vue3'
+import { QueryStringArrayFormatOption } from '@laraxgram/luna'
+import { config, Form } from '@laraxgram/vue3'
 
 const props = defineProps<{
   queryStringArrayFormat: QueryStringArrayFormatOption | 'force-brackets'

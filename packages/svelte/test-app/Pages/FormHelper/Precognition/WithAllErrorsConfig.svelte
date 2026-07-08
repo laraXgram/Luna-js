@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { config, useForm } from '@lunajs/svelte'
+  import { config, useForm } from '@laraxgram/svelte'
 
   // Set global config for withAllErrors (no .withAllErrors() call on the form)
   config.set('form.withAllErrors', true)

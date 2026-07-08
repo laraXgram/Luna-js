@@ -1,5 +1,5 @@
 {
-  "name": "@lunajs/svelte",
+  "name": "@laraxgram/svelte",
   "version": "3.6.1",
   "license": "MIT",
   "description": "The Svelte adapter for Luna.js",
@@ -57,7 +57,7 @@
     "svelte": "^5.0.0"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
+    "@laraxgram/luna": "workspace:*",
     "es-toolkit": "^1.33.0",
     "laravel-precognition": "^2.0.0"
   }

@@ -1,4 +1,4 @@
-import { InfiniteScroll, Link, router } from '@lunajs/react'
+import { InfiniteScroll, Link, router } from '@laraxgram/react'
 import UserCard, { User } from './UserCard'
 
 export default ({ users }: { users: { data: User[] } }) => {

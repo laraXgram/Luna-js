@@ -1,8 +1,8 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import type { LayoutCallback } from '@lunajs/react'
+import type { LayoutCallback } from '@laraxgram/react'
 import AppLayout from '../Layouts/AppLayout'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     sharedPageProps: {
       auth: { user: { name: string } | null }

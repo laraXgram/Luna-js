@@ -1,5 +1,5 @@
-import type { VisitOptions } from '@lunajs/core'
-import { config, Link, useForm, usePage } from '@lunajs/react'
+import type { VisitOptions } from '@laraxgram/luna'
+import { config, Link, useForm, usePage } from '@laraxgram/react'
 
 export default () => {
   const page = usePage()

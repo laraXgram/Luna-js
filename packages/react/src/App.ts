@@ -11,7 +11,7 @@ import {
   resolveServerHead,
   router,
   type ServerHeadOption,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import {
   createElement,
   FunctionComponent,

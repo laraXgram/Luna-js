@@ -1,5 +1,5 @@
-import type { Method } from '@lunajs/core'
-import { Form } from '@lunajs/react'
+import type { Method } from '@laraxgram/luna'
+import { Form } from '@laraxgram/react'
 import { useState } from 'react'
 
 export default () => {

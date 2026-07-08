@@ -4,7 +4,7 @@ let originalScrollTo: typeof window.scrollTo | null = null
 </script>
 
 <script setup lang="ts">
-import { Link } from '@lunajs/vue3'
+import { Link } from '@laraxgram/vue3'
 
 defineProps<{
   page: number

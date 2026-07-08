@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 import { useCallback, useEffect, useState } from 'react'
 
 export default function Wayfinder() {

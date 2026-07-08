@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Page } from '@lunajs/core'
-import { Link } from '@lunajs/vue3'
+import type { Page } from '@laraxgram/luna'
+import { Link } from '@laraxgram/vue3'
 import WithScrollRegion from '../../Layouts/WithScrollRegion.vue'
 
 defineOptions({

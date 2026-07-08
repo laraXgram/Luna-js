@@ -1,6 +1,6 @@
 <script lang="ts">
   // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-  import { useForm } from '@lunajs/svelte'
+  import { useForm } from '@laraxgram/svelte'
   import Child from './Child.svelte'
 
   const form = useForm({

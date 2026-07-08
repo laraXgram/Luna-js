@@ -1,7 +1,7 @@
 // This file is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { type ResolvedComponent, createLunaApp } from '@lunajs/react'
+import { type ResolvedComponent, createLunaApp } from '@laraxgram/react'
 
-declare module '@lunajs/core' {
+declare module '@laraxgram/luna' {
   export interface LunaConfig {
     sharedPageProps: {
       auth: { user: { name: string } | null }

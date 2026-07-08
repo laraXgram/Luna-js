@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useHttp } from '@lunajs/svelte'
+  import { useHttp } from '@laraxgram/svelte'
 
   interface ValidateResponse {
     success: boolean

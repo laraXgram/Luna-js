@@ -1,4 +1,4 @@
-import type { FormComponentProps, FormComponentSlotProps } from '@lunajs/core'
+import type { FormComponentProps, FormComponentSlotProps } from '@laraxgram/luna'
 import type { Component, ComponentProps, Snippet } from 'svelte'
 import Form from './Form.svelte'
 

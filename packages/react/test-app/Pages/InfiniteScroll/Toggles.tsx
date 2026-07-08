@@ -1,4 +1,4 @@
-import { InfiniteScroll } from '@lunajs/react'
+import { InfiniteScroll } from '@laraxgram/react'
 import { useState } from 'react'
 import UserCard, { User } from './UserCard'
 

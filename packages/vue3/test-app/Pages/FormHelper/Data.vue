@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useForm, usePage } from '@lunajs/vue3'
+import { useForm, usePage } from '@laraxgram/vue3'
 
 const form = useForm({
   name: 'foo',

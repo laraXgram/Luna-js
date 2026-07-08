@@ -1,4 +1,4 @@
-import { config, Form } from '@lunajs/react'
+import { config, Form } from '@laraxgram/react'
 
 export default () => {
   // Set global config for withAllErrors (no prop on the Form component)

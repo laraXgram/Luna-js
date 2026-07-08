@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-  import { router, http } from '@lunajs/svelte'
+  import { router, http } from '@laraxgram/svelte'
   import { onDestroy, onMount } from 'svelte'
 
   onMount(() => {

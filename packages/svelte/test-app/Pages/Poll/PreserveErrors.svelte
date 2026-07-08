@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useForm, usePoll, page } from '@lunajs/svelte'
+  import { useForm, usePoll, page } from '@laraxgram/svelte'
 
   interface Props {
     time: number

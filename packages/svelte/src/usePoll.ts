@@ -1,4 +1,4 @@
-import { router, type PollOptions, type ReloadOptions } from '@lunajs/core'
+import { router, type PollOptions, type ReloadOptions } from '@laraxgram/luna'
 import { onDestroy, onMount } from 'svelte'
 
 export default function usePoll(

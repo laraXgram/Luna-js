@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
 </script>
 
 <Form method="post" action="/form-component/reset-on-success" resetOnSuccess>

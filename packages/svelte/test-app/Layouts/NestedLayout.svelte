@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '@lunajs/svelte'
+  import { page } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
   interface Props {
     children?: import('svelte').Snippet

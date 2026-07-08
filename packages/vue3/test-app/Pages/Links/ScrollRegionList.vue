@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { VisitHelperOptions } from '@lunajs/core'
-import { router } from '@lunajs/vue3'
+import { VisitHelperOptions } from '@laraxgram/luna'
+import { router } from '@laraxgram/vue3'
 import WithScrollRegion from '@/Layouts/WithScrollRegion.vue'
 
 defineProps({

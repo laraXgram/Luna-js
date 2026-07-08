@@ -61,7 +61,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../core
       es-toolkit:
@@ -101,13 +101,13 @@ importers:
 
   packages/react/test-app:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../../core
-      '@lunajs/react':
+      '@laraxgram/react':
         specifier: workspace:*
         version: link:..
-      '@lunajs/vite':
+      '@laraxgram/vite':
         specifier: workspace:*
         version: link:../../vite
       '@vitejs/plugin-react':
@@ -141,7 +141,7 @@ importers:
 
   packages/svelte:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../core
       es-toolkit:
@@ -190,13 +190,13 @@ importers:
 
   packages/svelte/test-app:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../../core
-      '@lunajs/svelte':
+      '@laraxgram/svelte':
         specifier: workspace:*
         version: link:..
-      '@lunajs/vite':
+      '@laraxgram/vite':
         specifier: workspace:*
         version: link:../../vite
     devDependencies:
@@ -230,7 +230,7 @@ importers:
 
   packages/vite:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../core
       tinyglobby:
@@ -261,7 +261,7 @@ importers:
 
   packages/vue3:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../core
       es-toolkit:
@@ -292,13 +292,13 @@ importers:
 
   packages/vue3/test-app:
     dependencies:
-      '@lunajs/core':
+      '@laraxgram/luna':
         specifier: workspace:*
         version: link:../../core
-      '@lunajs/vite':
+      '@laraxgram/vite':
         specifier: workspace:*
         version: link:../../vite
-      '@lunajs/vue3':
+      '@laraxgram/vue3':
         specifier: workspace:*
         version: link:..
     devDependencies:

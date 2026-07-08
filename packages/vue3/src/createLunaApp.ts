@@ -13,7 +13,7 @@ import {
   router,
   setupProgress,
   SharedPageProps,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { createApp, createSSRApp, DefineComponent, h, Plugin, App as VueApp } from 'vue'
 import App, { LunaApp, LunaAppProps, plugin } from './app'
 import { config } from './index'

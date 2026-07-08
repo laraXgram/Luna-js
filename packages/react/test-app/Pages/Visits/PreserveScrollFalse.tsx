@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 import WithoutScrollRegion from '@/Layouts/WithoutScrollRegion.jsx'
 
 const PreserveScrollFalse = ({ foo = 'default' }) => {

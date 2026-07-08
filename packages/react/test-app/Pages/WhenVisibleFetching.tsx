@@ -1,4 +1,4 @@
-import { WhenVisible } from '@lunajs/react'
+import { WhenVisible } from '@laraxgram/react'
 
 export default () => {
   return (

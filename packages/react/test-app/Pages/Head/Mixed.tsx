@@ -1,4 +1,4 @@
-import { Head, Link } from '@lunajs/react'
+import { Head, Link } from '@laraxgram/react'
 
 export default () => {
   return (

@@ -1,4 +1,4 @@
-import type { FormComponentRef } from '@lunajs/core'
+import type { FormComponentRef } from '@laraxgram/luna'
 import { createContext } from 'svelte'
 
 const [getFormContext, setFormContext] = createContext<FormComponentRef>()

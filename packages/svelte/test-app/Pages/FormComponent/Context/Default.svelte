@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
   import ChildComponent from './ChildComponent.svelte'
   import NestedComponent from './NestedComponent.svelte'
   import OutsideFormComponent from './OutsideFormComponent.svelte'

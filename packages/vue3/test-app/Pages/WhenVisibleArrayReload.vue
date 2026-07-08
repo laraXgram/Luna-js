@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { router, WhenVisible } from '@lunajs/vue3'
+import { router, WhenVisible } from '@laraxgram/vue3'
 
 defineProps<{
   firstData?: {

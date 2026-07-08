@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useForm, usePoll } from '@lunajs/vue3'
+import { useForm, usePoll } from '@laraxgram/vue3'
 
 defineProps<{
   time: number

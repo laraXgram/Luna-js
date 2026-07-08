@@ -1,4 +1,4 @@
-import type { Method, Page, PageProps, Router } from '@lunajs/core'
+import type { Method, Page, PageProps, Router } from '@laraxgram/luna'
 
 declare global {
   interface Window {

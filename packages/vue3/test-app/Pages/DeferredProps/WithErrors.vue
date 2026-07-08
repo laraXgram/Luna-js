@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, useForm } from '@lunajs/vue3'
+import { Deferred, useForm } from '@laraxgram/vue3'
 
 defineProps<{
   foo?: { text: string }

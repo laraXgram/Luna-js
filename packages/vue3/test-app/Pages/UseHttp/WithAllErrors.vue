@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useHttp } from '@lunajs/vue3'
+import { useHttp } from '@laraxgram/vue3'
 
 interface ValidateResponse {
   success: boolean

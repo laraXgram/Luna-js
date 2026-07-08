@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { config, Form } from '@lunajs/vue3'
+import { config, Form } from '@laraxgram/vue3'
 
 // Set global config for withAllErrors (no prop on the Form component)
 config.set('form.withAllErrors', true)

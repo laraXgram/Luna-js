@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Method } from '@lunajs/core'
-import { Form } from '@lunajs/vue3'
+import type { Method } from '@laraxgram/luna'
+import { Form } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 const method = ref<Method>('get')

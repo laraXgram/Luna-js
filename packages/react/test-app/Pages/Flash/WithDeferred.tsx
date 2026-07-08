@@ -1,4 +1,4 @@
-import { Deferred, router, usePage } from '@lunajs/react'
+import { Deferred, router, usePage } from '@laraxgram/react'
 import { useRef, useState } from 'react'
 
 export default ({ data }: { data?: string }) => {

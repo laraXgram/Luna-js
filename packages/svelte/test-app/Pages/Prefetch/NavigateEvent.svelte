@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, router } from '@lunajs/svelte'
+  import { luna, router } from '@laraxgram/svelte'
   import { onMount } from 'svelte'
 
   onMount(() => {

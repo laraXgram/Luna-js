@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-  import { Link } from '@lunajs/svelte'
+  import { Link } from '@laraxgram/svelte'
 </script>
 
 <div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { FormDataConvertible } from '@lunajs/core'
-import { Form } from '@lunajs/vue3'
+import type { FormDataConvertible } from '@laraxgram/luna'
+import { Form } from '@laraxgram/vue3'
 import { computed, ref } from 'vue'
 
 const transformType = ref('none')

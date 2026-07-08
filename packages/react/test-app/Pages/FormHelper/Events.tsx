@@ -1,5 +1,5 @@
-import type { CancelToken, Errors, HttpProgressEvent, Page, PendingVisit } from '@lunajs/core'
-import { useForm, usePage } from '@lunajs/react'
+import type { CancelToken, Errors, HttpProgressEvent, Page, PendingVisit } from '@laraxgram/luna'
+import { useForm, usePage } from '@laraxgram/react'
 import { useEffect } from 'react'
 
 declare global {

@@ -1,4 +1,4 @@
-import { createLunaApp, type ResolvedComponent } from '@lunajs/react'
+import { createLunaApp, type ResolvedComponent } from '@laraxgram/react'
 import { createElement } from 'react'
 import { WithAppContext } from './Pages/SSR/WithApp'
 

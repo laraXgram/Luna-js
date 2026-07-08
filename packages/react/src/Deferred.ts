@@ -1,4 +1,4 @@
-import { isSameUrlWithoutQueryOrHash, partialReloadRequestsSomeProps } from '@lunajs/core'
+import { isSameUrlWithoutQueryOrHash, partialReloadRequestsSomeProps } from '@laraxgram/luna'
 import { get } from 'es-toolkit/compat'
 import { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
 import { router } from '.'

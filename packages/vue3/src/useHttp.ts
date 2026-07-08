@@ -23,7 +23,7 @@ import {
   UseFormWithPrecognitionArguments,
   UseHttpSubmitArguments,
   UseHttpSubmitOptions,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
 import { NamedInputEvent, toSimpleValidationErrors, ValidationConfig, Validator } from 'laravel-precognition'
 import useFormState from './useFormState'

@@ -1,4 +1,4 @@
-import { router, VisitOptions } from '@lunajs/core'
+import { router, VisitOptions } from '@laraxgram/luna'
 import { onMounted, onUnmounted, ref, Ref } from 'vue'
 
 export default function usePrefetch(options: VisitOptions = {}): {

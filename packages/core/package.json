@@ -1,6 +1,6 @@
 {
-  "name": "@lunajs/core",
-  "version": "3.6.1",
+  "name": "@laraxgram/luna",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "A framework for creating server-driven single page apps.",
   "repository": {

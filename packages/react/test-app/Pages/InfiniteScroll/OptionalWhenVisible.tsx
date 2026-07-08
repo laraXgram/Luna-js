@@ -1,4 +1,4 @@
-import { InfiniteScroll, usePage, WhenVisible } from '@lunajs/react'
+import { InfiniteScroll, usePage, WhenVisible } from '@laraxgram/react'
 import UserCard, { User } from './UserCard'
 
 const Users = () => {

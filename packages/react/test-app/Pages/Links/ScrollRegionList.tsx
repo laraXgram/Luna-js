@@ -1,5 +1,5 @@
-import { VisitHelperOptions } from '@lunajs/core'
-import { router } from '@lunajs/react'
+import { VisitHelperOptions } from '@laraxgram/luna'
+import { router } from '@laraxgram/react'
 import WithScrollRegion from '@/Layouts/WithScrollRegion.jsx'
 
 const ScrollRegionList = ({ user_id }: { user_id?: number }) => {

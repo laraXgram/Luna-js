@@ -1,5 +1,5 @@
-import { QueryStringArrayFormatOption } from '@lunajs/core'
-import { config, Form } from '@lunajs/react'
+import { QueryStringArrayFormatOption } from '@laraxgram/luna'
+import { config, Form } from '@laraxgram/react'
 
 export default ({
   queryStringArrayFormat,

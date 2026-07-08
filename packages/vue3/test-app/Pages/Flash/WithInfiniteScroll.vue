@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { InfiniteScroll, router, usePage } from '@lunajs/vue3'
+import { InfiniteScroll, router, usePage } from '@laraxgram/vue3'
 import { ref } from 'vue'
 
 defineProps<{

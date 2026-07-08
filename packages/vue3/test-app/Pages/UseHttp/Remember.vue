@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, useHttp } from '@lunajs/vue3'
+import { Link, useHttp } from '@laraxgram/vue3'
 
 const form = useHttp('useHttpRemember', {
   name: 'initial',

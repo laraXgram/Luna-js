@@ -1,5 +1,5 @@
-import { FormComponentRef } from '@lunajs/core'
-import { Form } from '@lunajs/react'
+import { FormComponentRef } from '@laraxgram/luna'
+import { Form } from '@laraxgram/react'
 import { useRef } from 'react'
 
 export default function Ref() {

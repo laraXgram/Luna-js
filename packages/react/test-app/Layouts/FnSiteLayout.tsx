@@ -1,4 +1,4 @@
-import { usePage } from '@lunajs/react'
+import { usePage } from '@laraxgram/react'
 import { useId, useState } from 'react'
 
 export default function FnSiteLayout({ children }: { children: React.ReactNode }) {

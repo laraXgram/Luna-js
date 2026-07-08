@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Page } from '@lunajs/core'
-  import { router } from '@lunajs/svelte'
+  import type { Page } from '@laraxgram/luna'
+  import { router } from '@laraxgram/svelte'
 
   interface PageProps {
     foo: string

@@ -1,4 +1,4 @@
-import { useHttp } from '@lunajs/react'
+import { useHttp } from '@laraxgram/react'
 import { useState } from 'react'
 
 interface UploadResponse {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { InfiniteScroll, Link, useForm } from '@lunajs/svelte'
+  import { InfiniteScroll, Link, useForm } from '@laraxgram/svelte'
   import { onDestroy, untrack } from 'svelte'
   import UserCard, { type User } from './UserCard.svelte'
 

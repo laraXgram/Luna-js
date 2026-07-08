@@ -1,4 +1,4 @@
-import { useForm } from '@lunajs/react'
+import { useForm } from '@laraxgram/react'
 import { isEqual } from 'es-toolkit'
 
 export default () => {

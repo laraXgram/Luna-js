@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 
 export default ({ bar, foo }: { bar: number[]; foo: number[] }) => {
   const reloadIt = () => {

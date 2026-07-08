@@ -1,4 +1,4 @@
-import { Link, WhenVisible } from '@lunajs/react'
+import { Link, WhenVisible } from '@laraxgram/react'
 
 export default ({
   lazyData,

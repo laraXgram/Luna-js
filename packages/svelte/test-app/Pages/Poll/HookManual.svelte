@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { usePoll } from '@lunajs/svelte'
+  import { usePoll } from '@laraxgram/svelte'
 
   const { start, stop } = usePoll(
     500,

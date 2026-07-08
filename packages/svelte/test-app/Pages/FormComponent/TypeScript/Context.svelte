@@ -1,6 +1,6 @@
 <!-- This component is used for checking the TypeScript implementation; there is no Playwright test depending on it. -->
 <script lang="ts">
-  import { useFormContext } from '@lunajs/svelte'
+  import { useFormContext } from '@laraxgram/svelte'
 
   interface UserForm {
     name: string

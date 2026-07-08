@@ -1,4 +1,4 @@
-import { Head, Link, router } from '@lunajs/react'
+import { Head, Link, router } from '@laraxgram/react'
 
 export default ({ foo, next }: { foo: string; next: string }) => {
   const override = new URLSearchParams(window.location.search).has('override')

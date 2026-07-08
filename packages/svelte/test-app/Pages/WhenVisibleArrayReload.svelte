@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router, WhenVisible } from '@lunajs/svelte'
+  import { router, WhenVisible } from '@laraxgram/svelte'
 
   interface Props {
     firstData?:

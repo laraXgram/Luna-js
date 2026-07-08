@@ -1,4 +1,4 @@
-import { useHttp } from '@lunajs/react'
+import { useHttp } from '@laraxgram/react'
 
 export default () => {
   const optimisticForm = useHttp<{ name: string }, { success: boolean; id: number; name: string }>({

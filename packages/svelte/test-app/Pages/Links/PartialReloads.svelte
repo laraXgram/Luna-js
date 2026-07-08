@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna } from '@lunajs/svelte'
+  import { luna } from '@laraxgram/svelte'
 
   let { foo = 0, bar, baz, headers } = $props()
 </script>

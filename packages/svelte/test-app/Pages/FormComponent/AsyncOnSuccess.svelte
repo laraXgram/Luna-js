@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
 
   const onSuccess = () => new Promise<void>((resolve) => setTimeout(resolve, 1500))
 </script>

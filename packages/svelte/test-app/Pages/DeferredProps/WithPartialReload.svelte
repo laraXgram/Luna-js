@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Deferred, luna, router } from '@lunajs/svelte'
+  import { Deferred, luna, router } from '@laraxgram/svelte'
 
   interface Props {
     withOnly?: string[]

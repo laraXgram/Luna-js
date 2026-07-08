@@ -1,4 +1,4 @@
-import { router, WhenVisible } from '@lunajs/react'
+import { router, WhenVisible } from '@laraxgram/react'
 
 interface Props {
   lazyData?: {

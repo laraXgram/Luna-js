@@ -1,7 +1,7 @@
 <!-- This component is used for checking the TypeScript implementation; there is no Playwright test depending on it. -->
 <script lang="ts">
-  import type { FormComponentMethods, FormComponentRef } from '@lunajs/core'
-  import { Form } from '@lunajs/svelte'
+  import type { FormComponentMethods, FormComponentRef } from '@laraxgram/luna'
+  import { Form } from '@laraxgram/svelte'
 
   interface UserForm {
     name: string

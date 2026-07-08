@@ -1,4 +1,4 @@
-import { router } from '@lunajs/core'
+import { router } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
 
 export default function useRemember<State extends object>(initialState: State, key?: string): State {

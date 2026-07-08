@@ -1,4 +1,4 @@
-import { Form } from '@lunajs/react'
+import { Form } from '@laraxgram/react'
 import { useEffect, useRef, useState } from 'react'
 
 export default () => {

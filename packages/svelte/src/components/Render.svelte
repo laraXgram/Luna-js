@@ -1,5 +1,5 @@
 <script module lang="ts">
-  import type { PageProps } from '@lunajs/core'
+  import type { PageProps } from '@laraxgram/luna'
   import type { Component } from 'svelte'
 
   export type RenderProps = {

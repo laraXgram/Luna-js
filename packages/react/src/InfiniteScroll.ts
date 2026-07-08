@@ -7,7 +7,7 @@ import {
   ReloadOptions,
   useInfiniteScroll,
   UseInfiniteScrollProps,
-} from '@lunajs/core'
+} from '@laraxgram/luna'
 import React, {
   createElement,
   forwardRef,

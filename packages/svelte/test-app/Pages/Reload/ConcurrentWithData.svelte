@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   let { foo, bar, timeframe }: { foo?: string; bar?: string; timeframe?: string } = $props()
 

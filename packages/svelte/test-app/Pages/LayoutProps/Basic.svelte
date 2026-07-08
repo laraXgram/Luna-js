@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-  import { Link, setLayoutProps } from '@lunajs/svelte'
+  import { Link, setLayoutProps } from '@laraxgram/svelte'
 
   let sidebarVisible = $state(true)
 

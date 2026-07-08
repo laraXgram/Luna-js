@@ -1,4 +1,4 @@
-import { Form } from '@lunajs/react'
+import { Form } from '@laraxgram/react'
 import { isEqual } from 'es-toolkit'
 
 export default function PrecognitionBefore() {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { router } from '@lunajs/svelte'
+  import { router } from '@laraxgram/svelte'
 
   let documentScrollTop = $state(0)
   let documentScrollLeft = $state(0)

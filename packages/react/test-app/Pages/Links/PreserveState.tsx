@@ -1,5 +1,5 @@
-import type { Page } from '@lunajs/core'
-import { Link } from '@lunajs/react'
+import type { Page } from '@laraxgram/luna'
+import { Link } from '@laraxgram/react'
 import { useId } from 'react'
 import WithoutScrollRegion from '@/Layouts/WithoutScrollRegion.jsx'
 

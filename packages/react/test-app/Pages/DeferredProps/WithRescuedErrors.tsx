@@ -1,4 +1,4 @@
-import { Deferred, router, usePage } from '@lunajs/react'
+import { Deferred, router, usePage } from '@laraxgram/react'
 
 const Foo = () => {
   const { foo } = usePage<{ foo?: { text: string } | null }>().props

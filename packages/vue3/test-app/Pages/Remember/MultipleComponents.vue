@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Link, useRemember } from '@lunajs/vue3'
+import { Link, useRemember } from '@laraxgram/vue3'
 import { ref } from 'vue'
 import ComponentA from '@/Pages/Remember/Components/ComponentA.vue'
 import ComponentB from '@/Pages/Remember/Components/ComponentB.vue'

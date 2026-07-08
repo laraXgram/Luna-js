@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { luna, usePoll } from '@lunajs/svelte'
+  import { luna, usePoll } from '@laraxgram/svelte'
 
   usePoll(500, {
     only: ['custom_prop'],

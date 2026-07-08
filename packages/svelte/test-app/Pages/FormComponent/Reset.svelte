@@ -7,8 +7,8 @@
 </script>
 
 <script lang="ts">
-  import type { FormComponentMethods } from '@lunajs/core'
-  import { Form } from '@lunajs/svelte'
+  import type { FormComponentMethods } from '@laraxgram/luna'
+  import { Form } from '@laraxgram/svelte'
 
   let formRef: FormComponentMethods = $state(null!)
 

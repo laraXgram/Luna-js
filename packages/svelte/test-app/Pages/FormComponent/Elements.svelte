@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { QueryStringArrayFormatOption } from '@lunajs/core'
-  import { config, Form } from '@lunajs/svelte'
+  import type { QueryStringArrayFormatOption } from '@laraxgram/luna'
+  import { config, Form } from '@laraxgram/svelte'
 
   interface Props {
     queryStringArrayFormat: QueryStringArrayFormatOption | 'force-brackets'

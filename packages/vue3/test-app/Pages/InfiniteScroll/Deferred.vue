@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, InfiniteScroll } from '@lunajs/vue3'
+import { Deferred, InfiniteScroll } from '@laraxgram/vue3'
 import { User, default as UserCard } from './UserCard.vue'
 
 defineProps<{

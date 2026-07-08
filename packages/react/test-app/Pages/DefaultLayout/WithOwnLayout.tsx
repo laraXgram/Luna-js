@@ -1,4 +1,4 @@
-import { Link } from '@lunajs/react'
+import { Link } from '@laraxgram/react'
 import PageLayout from '@/Layouts/PageLayout'
 
 const WithOwnLayout = () => {

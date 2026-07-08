@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getScrollableParent } from '@lunajs/core'
+  import { getScrollableParent } from '@laraxgram/luna'
   import { onMount } from 'svelte'
 
   let overflowXHidden: HTMLDivElement = $state(null!)

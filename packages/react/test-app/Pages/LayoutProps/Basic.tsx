@@ -1,4 +1,4 @@
-import { Link, setLayoutProps } from '@lunajs/react'
+import { Link, setLayoutProps } from '@laraxgram/react'
 import { useState } from 'react'
 import AppLayout from '../../Layouts/AppLayout'
 

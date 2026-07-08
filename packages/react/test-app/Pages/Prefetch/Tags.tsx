@@ -1,4 +1,4 @@
-import { Link, router, useForm } from '@lunajs/react'
+import { Link, router, useForm } from '@laraxgram/react'
 
 export default ({ pageNumber, lastLoaded, propType }: { pageNumber: number; lastLoaded: number; propType: string }) => {
   const form = useForm({

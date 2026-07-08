@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import luna from '@lunajs/vite'
+import luna from '@laraxgram/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 

@@ -1,5 +1,5 @@
-import type { Page } from '@lunajs/core'
-import { Link } from '@lunajs/react'
+import type { Page } from '@laraxgram/luna'
+import { Link } from '@laraxgram/react'
 import WithScrollRegion from '@/Layouts/WithScrollRegion.jsx'
 
 const PreserveScroll = ({ foo = 'default' }: { foo?: string }) => {

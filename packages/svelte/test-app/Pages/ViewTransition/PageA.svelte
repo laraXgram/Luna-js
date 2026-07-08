@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Link, router } from '@lunajs/svelte'
+  import { Link, router } from '@laraxgram/svelte'
 
   const transitionWithBoolean = () => {
     router.visit('/view-transition/page-b', {

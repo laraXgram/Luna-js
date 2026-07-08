@@ -1,5 +1,5 @@
 {
-  "name": "@lunajs/vue3",
+  "name": "@laraxgram/vue3",
   "version": "3.6.1",
   "license": "MIT",
   "description": "The Vue 3 adapter for Luna.js",
@@ -57,7 +57,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@lunajs/core": "workspace:*",
+    "@laraxgram/luna": "workspace:*",
     "es-toolkit": "^1.33.0",
     "laravel-precognition": "^2.0.0"
   }

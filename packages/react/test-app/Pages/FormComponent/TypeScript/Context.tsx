@@ -1,5 +1,5 @@
 // This component is used for checking the TypeScript implementation; there is no Playwright test depending on it.
-import { useFormContext } from '@lunajs/react'
+import { useFormContext } from '@laraxgram/react'
 
 interface UserForm {
   name: string

@@ -8,8 +8,8 @@
 </script>
 
 <script lang="ts">
-  import type { ActiveVisit, CancelToken, Page, Progress, Errors } from '@lunajs/core'
-  import { page, useForm } from '@lunajs/svelte'
+  import type { ActiveVisit, CancelToken, Page, Progress, Errors } from '@laraxgram/luna'
+  import { page, useForm } from '@laraxgram/svelte'
   import { preventDefault } from 'svelte/legacy'
 
   window.events = []

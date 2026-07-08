@@ -99,7 +99,7 @@ export default function luna(options: LunaPluginOptions = {}): Plugin {
   let devServer: ViteDevServer | null = null
 
   return {
-    name: '@lunajs/vite',
+    name: '@laraxgram/vite',
 
     config(config, env) {
       if (ssrDisabled || !env.isSsrBuild) {

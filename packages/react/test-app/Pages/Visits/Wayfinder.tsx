@@ -1,4 +1,4 @@
-import { router } from '@lunajs/react'
+import { router } from '@laraxgram/react'
 
 export default function Wayfinder() {
   const wayfinderObjectVisit = (e: React.MouseEvent) => {

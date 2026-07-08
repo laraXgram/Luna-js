@@ -1,4 +1,4 @@
-import { useForm, usePage, WhenVisible } from '@lunajs/react'
+import { useForm, usePage, WhenVisible } from '@laraxgram/react'
 
 export default ({ foo }: { foo?: string }) => {
   const { errors } = usePage().props as { errors?: { name?: string } }

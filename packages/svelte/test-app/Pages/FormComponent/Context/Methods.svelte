@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Form } from '@lunajs/svelte'
+  import { Form } from '@laraxgram/svelte'
   import MethodsTestComponent from './MethodsTestComponent.svelte'
 </script>
 

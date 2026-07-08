@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, Link, router } from '@lunajs/vue3'
+import { Deferred, Link, router } from '@laraxgram/vue3'
 import { toRef } from 'vue'
 
 const props = defineProps<{

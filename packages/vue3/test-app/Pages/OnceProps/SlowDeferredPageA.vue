@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Deferred, Link } from '@lunajs/vue3'
+import { Deferred, Link } from '@laraxgram/vue3'
 
 defineProps<{
   foo?: string

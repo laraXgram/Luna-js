@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-  import { luna, page } from '@lunajs/svelte'
+  import { luna, page } from '@laraxgram/svelte'
 
   window._luna_page_props = page.props
 </script>

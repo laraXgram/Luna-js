@@ -1,4 +1,4 @@
-import { LunaFormProps, useForm } from '@lunajs/react'
+import { LunaFormProps, useForm } from '@laraxgram/react'
 import { memo, useRef } from 'react'
 
 const MemoizedDisplay = memo(({ form }: { form: LunaFormProps<{ position: string }> }) => {
