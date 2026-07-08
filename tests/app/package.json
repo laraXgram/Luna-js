@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "serve": "node server.js",
+    "serve:watch": "nodemon server.js"
+  },
+  "devDependencies": {
+    "body-parser": "^2.2.2",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "nodemon": "^3.1.14"
+  }
+}
