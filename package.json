@@ -1,0 +1,46 @@
+{
+  "name": "luna",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:all": "pnpm -r --filter './packages/*' build",
+    "dev": "pnpx concurrently -c \"#b794f4,#61dafb,#d43008,#32a06f,#bd34fe,#ffa800\" \"pnpm dev:core\" \"pnpm dev:react\" \"pnpm dev:svelte\" \"pnpm dev:vue\" \"pnpm dev:vite\" --names=core,react,svelte,vue,vite",
+    "dev:core": "cd packages/core && pnpm run dev",
+    "dev:vite": "cd packages/vite && pnpm run dev",
+    "dev:vue": "cd packages/vue3 && pnpm run dev",
+    "dev:react": "cd packages/react && pnpm run dev",
+    "dev:svelte": "cd packages/svelte && pnpm run dev",
+    "dev:test-app": "pnpx concurrently -c \"#61dafb,#d43008,#32a06f\" \"pnpm dev:test-app:react\" \"pnpm dev:test-app:svelte\" \"pnpm dev:test-app:vue\" --names=react,svelte,vue",
+    "dev:test-app:react": "pnpx concurrently -c \"#c4b5fd,#ffa800\" \"cd tests/app && PACKAGE=react pnpm serve:watch\" \"cd packages/react/test-app && pnpm run dev\" --names=server,vite",
+    "dev:test-app:svelte": "pnpx concurrently -c \"#c4b5fd,#ffa800\" \"cd tests/app && PACKAGE=svelte pnpm serve:watch\" \"cd packages/svelte/test-app && pnpm run dev\" --names=server,vite",
+    "dev:test-app:vue": "pnpx concurrently -c \"#c4b5fd,#ffa800\" \"cd tests/app && PACKAGE=vue3 pnpm serve:watch\" \"cd packages/vue3/test-app && pnpm run dev\" --names=server,vite",
+    "es2022-check": "pnpm -r --filter './packages/*' es2022-check",
+    "lint:test-app": "pnpm -r --filter './packages/*/test-app' lint",
+    "lint:test-app:react": "cd packages/react/test-app && pnpm run lint",
+    "lint:test-app:svelte": "cd packages/svelte/test-app && pnpm run lint",
+    "lint:test-app:vue": "cd packages/vue3/test-app && pnpm run lint",
+    "type-check:test-app": "pnpm -r --filter './packages/*/test-app' type-check",
+    "type-check:test-app:react": "cd packages/react/test-app && pnpm run type-check",
+    "type-check:test-app:svelte": "cd packages/svelte/test-app && pnpm run type-check",
+    "type-check:test-app:vue": "cd packages/vue3/test-app && pnpm run type-check",
+    "test:react": "PACKAGE=react node playwright.js",
+    "test:svelte": "PACKAGE=svelte node playwright.js",
+    "test:vue": "PACKAGE=vue3 node playwright.js",
+    "test:ssr:react": "PACKAGE=react SSR=true npx playwright test",
+    "test:ssr:svelte": "PACKAGE=svelte SSR=true npx playwright test",
+    "test:ssr:vue": "PACKAGE=vue3 SSR=true npx playwright test",
+    "test:vite": "cd packages/vite && pnpm test",
+    "format": "oxfmt"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.59.0"
+  },
+  "engines": {
+    "pnpm": ">=11.1.1"
+  }
+}
