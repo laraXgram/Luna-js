@@ -1,6 +1,6 @@
 {
   "name": "@laraxgram/vite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Vite plugin for Luna.js with SSR dev mode support.",
   "repository": {

@@ -49,11 +49,11 @@ export interface LunaPluginOptions {
    * ```ts
    * luna({
    *   frameworks: {
-   *     package: '@lunajs/solid',
+   *     package: '@laraxgram/solid',
    *     extensions: ['.tsx', '.jsx'],
    *     extractDefault: true,
    *     ssr: (configureCall, options) => `
-   *       import createServer from '@lunajs/solid/server'
+   *       import createServer from '@laraxgram/solid/server'
    *       const render = await ${configureCall}
    *       createServer((page) => render(page)${options})
    *     `,
