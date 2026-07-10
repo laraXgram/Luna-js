@@ -6,6 +6,9 @@ packages:
 allowBuilds:
   esbuild: true
 
+minimumReleaseAgeExclude:
+  - laragram-precognition@0.1.0
+
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
   - esbuild

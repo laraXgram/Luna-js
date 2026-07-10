@@ -1,4 +1,4 @@
-import { NamedInputEvent, ValidationConfig, Validator } from 'laravel-precognition'
+import { NamedInputEvent, ValidationConfig, Validator } from 'laragram-precognition'
 import type { HttpCancelledError, HttpNetworkError, HttpResponseError } from './httpErrors'
 import { InfiniteScrollOnCompleteDetails, InfiniteScrollPageIdentifier } from './infiniteScroll/data'
 import { Response } from './response'

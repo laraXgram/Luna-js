@@ -20,7 +20,7 @@ import {
   toSimpleValidationErrors,
   ValidationConfig,
   Validator,
-} from 'laravel-precognition'
+} from 'laragram-precognition'
 import { reactive, watch } from 'vue'
 import { config } from '.'
 

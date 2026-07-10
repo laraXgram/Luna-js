@@ -16,7 +16,7 @@
     UseFormUtils,
   } from '@laraxgram/luna'
   import { isEqual } from 'es-toolkit'
-  import { type NamedInputEvent, type ValidationConfig, type Validator } from 'laravel-precognition'
+  import { type NamedInputEvent, type ValidationConfig, type Validator } from 'laragram-precognition'
   import { onMount } from 'svelte'
   import { config } from '..'
   import useForm from '../useForm.svelte'

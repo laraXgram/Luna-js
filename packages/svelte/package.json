@@ -59,6 +59,6 @@
   "dependencies": {
     "@laraxgram/luna": "workspace:*",
     "es-toolkit": "^1.33.0",
-    "laravel-precognition": "^2.0.0"
+    "laragram-precognition": "^0"
   }
 }

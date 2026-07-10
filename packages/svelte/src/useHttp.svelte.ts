@@ -27,8 +27,8 @@ import {
   UseFormUtils,
 } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
-import type { NamedInputEvent, ValidationConfig, Validator } from 'laravel-precognition'
-import { toSimpleValidationErrors } from 'laravel-precognition'
+import type { NamedInputEvent, ValidationConfig, Validator } from 'laragram-precognition'
+import { toSimpleValidationErrors } from 'laragram-precognition'
 import useFormState, { type FormStateWithPrecognition, type InternalPrecognitionState } from './useFormState.svelte'
 
 export interface UseHttpProps<TForm extends object, TResponse = unknown> {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useForm } from '@laraxgram/vue3'
-import { NamedInputEvent } from 'laravel-precognition'
+import { NamedInputEvent } from 'laragram-precognition'
 
 const form = useForm({
   name: '',

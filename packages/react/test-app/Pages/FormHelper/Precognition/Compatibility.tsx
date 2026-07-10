@@ -1,5 +1,5 @@
 import { useForm } from '@laraxgram/react'
-import { NamedInputEvent } from 'laravel-precognition'
+import { NamedInputEvent } from 'laragram-precognition'
 
 export default () => {
   const form = useForm({

@@ -20,7 +20,7 @@ import {
   VisitOptions,
 } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
-import type { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laravel-precognition'
+import type { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laragram-precognition'
 import { useCallback, useMemo, useRef } from 'react'
 import useFormState, { SetDataAction, SetDataByKeyValuePair, SetDataByMethod, SetDataByObject } from './useFormState'
 import useRemember from './useRemember'

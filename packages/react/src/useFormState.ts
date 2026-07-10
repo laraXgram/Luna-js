@@ -19,7 +19,7 @@ import {
   toSimpleValidationErrors,
   ValidationConfig,
   Validator,
-} from 'laravel-precognition'
+} from 'laragram-precognition'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { config } from '.'
 

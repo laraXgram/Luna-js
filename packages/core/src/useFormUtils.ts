@@ -1,4 +1,4 @@
-import { NamedInputEvent, ValidationConfig } from 'laravel-precognition'
+import { NamedInputEvent, ValidationConfig } from 'laragram-precognition'
 import {
   FormDataType,
   Method,

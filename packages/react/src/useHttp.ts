@@ -25,7 +25,7 @@ import {
   UseHttpSubmitOptions,
 } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
-import { NamedInputEvent, toSimpleValidationErrors, ValidationConfig, Validator } from 'laravel-precognition'
+import { NamedInputEvent, toSimpleValidationErrors, ValidationConfig, Validator } from 'laragram-precognition'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import useFormState, { SetDataAction } from './useFormState'
 import useRemember from './useRemember'

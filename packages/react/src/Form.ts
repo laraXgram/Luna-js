@@ -15,7 +15,7 @@ import {
   VisitOptions,
 } from '@laraxgram/luna'
 import { isEqual } from 'es-toolkit'
-import { NamedInputEvent, ValidationConfig } from 'laravel-precognition'
+import { NamedInputEvent, ValidationConfig } from 'laragram-precognition'
 import React, {
   createContext,
   createElement,

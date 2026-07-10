@@ -20,7 +20,7 @@ import {
   VisitOptions,
 } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
-import { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laravel-precognition'
+import { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laragram-precognition'
 import useFormState from './useFormState'
 
 // Reserved keys validation - logs console.error at runtime when form data keys conflict with form properties

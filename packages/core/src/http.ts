@@ -1,4 +1,4 @@
-import { client as precognitionClient } from 'laravel-precognition'
+import { client as precognitionClient } from 'laragram-precognition'
 import { httpHandlers } from './httpHandlers'
 import { HttpClient, HttpClientOptions } from './types'
 import { XhrHttpClient, xhrHttpClient } from './xhrHttpClient'

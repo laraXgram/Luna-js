@@ -12,8 +12,8 @@ import type {
 import { router, UseFormUtils } from '@laraxgram/luna'
 import { cloneDeep, isEqual } from 'es-toolkit'
 import { get, has, set } from 'es-toolkit/compat'
-import type { NamedInputEvent, ValidationConfig, Validator } from 'laravel-precognition'
-import { createValidator, resolveName, toSimpleValidationErrors } from 'laravel-precognition'
+import type { NamedInputEvent, ValidationConfig, Validator } from 'laragram-precognition'
+import { createValidator, resolveName, toSimpleValidationErrors } from 'laragram-precognition'
 import { config } from '.'
 
 type TransformCallback<TForm> = (data: TForm) => object

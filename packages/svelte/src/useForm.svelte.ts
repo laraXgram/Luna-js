@@ -24,7 +24,7 @@ import type {
 } from '@laraxgram/luna'
 import { router, UseFormUtils } from '@laraxgram/luna'
 import { cloneDeep } from 'es-toolkit'
-import type { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laravel-precognition'
+import type { NamedInputEvent, PrecognitionPath, ValidationConfig, Validator } from 'laragram-precognition'
 import useFormState, { type FormStateWithPrecognition, type InternalPrecognitionState } from './useFormState.svelte'
 
 // Reserved keys validation - logs console.error at runtime when form data keys conflict with form properties

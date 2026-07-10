@@ -1,6 +1,6 @@
 <script lang="ts">
   import { useForm } from '@laraxgram/svelte'
-  import type { NamedInputEvent } from 'laravel-precognition'
+  import type { NamedInputEvent } from 'laragram-precognition'
 
   const form = useForm({
     name: '',
