@@ -25,5 +25,13 @@ export { default as useHttp } from './useHttp.svelte'
 export { default as usePoll } from './usePoll'
 export { default as usePrefetch } from './usePrefetch.svelte'
 export { default as useRemember } from './useRemember.svelte'
+export {
+  getTelegramSharedContext,
+  getTelegramUser,
+  useTelegram,
+  useTelegramBackButton,
+  useTelegramClosingConfirmation,
+  useTelegramFormButton,
+} from './telegram.svelte'
 
 export const config = coreConfig.extend<SvelteLunaAppConfig>({})

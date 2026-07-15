@@ -62,7 +62,29 @@ export interface LunaPluginOptions {
    * ```
    */
   frameworks?: FrameworkConfig | FrameworkConfig[]
+
+  /**
+   * Telegram Mini App support. Pass `true` to inject the official
+   * `telegram-web-app.js` SDK, or an object for finer control (including the
+   * in-browser dev mock so the app runs outside the Telegram client).
+   */
+  telegram?: boolean | TelegramPluginOptions
 }
+
+export interface TelegramPluginOptions {
+  /** Inject the `telegram-web-app.js` script tag into the page head. Default: true. */
+  inject?: boolean
+  /** SDK script URL. Default: `https://telegram.org/js/telegram-web-app.js`. */
+  src?: string
+  /**
+   * Install the in-browser mock SDK during **dev** when no real Telegram
+   * context is present, so the Mini App is runnable in a plain browser. Pass an
+   * object to seed the mock (colorScheme, themeParams, …). Default: false.
+   */
+  mock?: boolean | Record<string, unknown>
+}
+
+const TELEGRAM_SDK_URL = 'https://telegram.org/js/telegram-web-app.js'
 
 /**
  * Normalize the frameworks option into a record keyed by package name.
@@ -95,11 +117,52 @@ export default function luna(options: LunaPluginOptions = {}): Plugin {
   const ssr = typeof options.ssr === 'string' ? { entry: options.ssr } : options.ssr || {}
   const frameworks = { ...defaultFrameworks, ...toFrameworkRecord(options.frameworks) }
 
+  const telegramEnabled = !!options.telegram
+  const telegram: TelegramPluginOptions = options.telegram === true ? {} : options.telegram || {}
+
   let entry: string | null = null
   let devServer: ViteDevServer | null = null
 
   return {
     name: '@laraxgram/vite',
+
+    transformIndexHtml: {
+      order: 'pre' as const,
+      handler(html: string, ctx: { server?: ViteDevServer }) {
+        if (!telegramEnabled) {
+          return
+        }
+
+        const tags: Array<{
+          tag: string
+          attrs?: Record<string, string | boolean>
+          children?: string
+          injectTo: 'head' | 'head-prepend'
+        }> = []
+
+        if (telegram.inject !== false) {
+          tags.push({
+            tag: 'script',
+            attrs: { src: telegram.src ?? TELEGRAM_SDK_URL },
+            injectTo: 'head-prepend',
+          })
+        }
+
+        // Dev-only mock: runs after the SDK script and only fills in when there
+        // is no real Telegram context (checked inside installTelegramMock).
+        if (ctx.server && telegram.mock) {
+          const seed = typeof telegram.mock === 'object' ? JSON.stringify(telegram.mock) : '{}'
+          tags.push({
+            tag: 'script',
+            attrs: { type: 'module' },
+            children: `import { installTelegramMock } from '@laraxgram/luna'; installTelegramMock(${seed})`,
+            injectTo: 'head',
+          })
+        }
+
+        return { html, tags }
+      },
+    },
 
     config(config, env) {
       if (ssrDisabled || !env.isSsrBuild) {

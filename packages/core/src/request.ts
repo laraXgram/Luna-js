@@ -12,6 +12,7 @@ import { interceptors } from './interceptors'
 import { page as currentPage } from './page'
 import { RequestParams } from './requestParams'
 import { Response } from './response'
+import { initData } from './telegram/webApp'
 import type { ActiveVisit, Page } from './types'
 import { HttpProgressEvent, HttpRequestConfig, HttpRequestHeaders } from './types'
 import { urlWithoutHash } from './url'
@@ -189,6 +190,12 @@ export class Request {
 
     if (onceProps.length > 0) {
       headers['X-Luna-Except-Once-Props'] = onceProps.join(',')
+    }
+
+    const telegramInitData = initData()
+
+    if (telegramInitData) {
+      headers['X-Telegram-Init-Data'] = telegramInitData
     }
 
     return headers

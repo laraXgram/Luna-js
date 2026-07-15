@@ -50,6 +50,7 @@
     "dev:build": "./build.js --watch",
     "dev:types": "tsc --watch --preserveWatchOutput",
     "es2022-check": "pnpm build:with-deps && es-check es2022 \"dist/index.js\" --checkFeatures --module --noCache --verbose",
+    "gen:bot-api": "node scripts/generate-bot-api-types.mjs",
     "test": "vitest run"
   },
   "dependencies": {
