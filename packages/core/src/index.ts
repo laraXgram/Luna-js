@@ -24,6 +24,17 @@ export {
   type LayoutDefinition,
   type LayoutPropsStore,
 } from './layout'
+export {
+  callMcpTool,
+  connectMcpApp,
+  isMcpApp,
+  mcpApp,
+  type ConnectMcpAppOptions,
+  type McpApp,
+  type McpHostContext,
+  type McpToolInput,
+  type McpToolResult,
+} from './mcp'
 export { shouldIntercept, shouldNavigate } from './navigationEvents'
 export { BOT_API_VERSION, type BotApiMethodName, type BotApiMethods } from './telegram/botApi.generated'
 export {

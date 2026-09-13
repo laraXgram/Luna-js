@@ -28,6 +28,7 @@ import type { FrameworkConfig } from './types'
 
 export type { FrameworkConfig, SSRTemplate } from './types'
 export { LunaSSROptions }
+export { default as lunaMcpApp, type LunaMcpAppOptions } from './mcpApp'
 
 export interface LunaPluginOptions {
   /**
