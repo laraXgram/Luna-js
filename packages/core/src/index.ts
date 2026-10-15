@@ -4,6 +4,19 @@ import { Router } from './router'
 export { UseFormUtils } from './useFormUtils'
 
 export { axiosAdapter } from './axiosHttpClient'
+export {
+  ChatClient,
+  type ChatFilePart,
+  type ChatMessage,
+  type ChatMessagePart,
+  type ChatOptions,
+  type ChatSendInput,
+  type ChatSourcePart,
+  type ChatState,
+  type ChatStatus,
+  type ChatTextPart,
+  type ChatToolPart,
+} from './chat'
 export { config } from './config'
 export { getInitialPageFromDOM, getScrollableParent } from './domUtils'
 export { hasFiles } from './files'

@@ -21,6 +21,7 @@ export {
   type LunaFormProps,
   type LunaPrecognitiveForm,
 } from './useForm.svelte'
+export { default as useChat, type UseChatProps } from './useChat.svelte'
 export { default as useHttp } from './useHttp.svelte'
 export { default as usePoll } from './usePoll'
 export { default as usePrefetch } from './usePrefetch.svelte'
