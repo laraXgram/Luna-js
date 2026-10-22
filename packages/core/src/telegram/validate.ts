@@ -122,10 +122,15 @@ function parseFields(initData: string): Record<string, string> {
   return fields
 }
 
-/** Build the data-check-string: sorted `key=value` pairs excluding hash/signature. */
-function dataCheckString(fields: Record<string, string>): string {
+/**
+ * Build the data-check-string: sorted `key=value` pairs without the `excluded` keys.
+ *
+ * The bot-token hash covers `signature` (only `hash` is left out); the Ed25519
+ * signature leaves out both `hash` and `signature`.
+ */
+function dataCheckString(fields: Record<string, string>, excluded: string[]): string {
   return Object.keys(fields)
-    .filter((key) => key !== 'hash' && key !== 'signature')
+    .filter((key) => !excluded.includes(key))
     .sort()
     .map((key) => `${key}=${fields[key]}`)
     .join('\n')
@@ -160,7 +165,7 @@ function hexToBytes(hex: string): Uint8Array {
 
 async function verifyHmac(fields: Record<string, string>, botToken: string): Promise<void> {
   const secretKey = await hmacSha256(utf8(HMAC_KEY), utf8(botToken))
-  const expected = toHex(await hmacSha256(secretKey, utf8(dataCheckString(fields))))
+  const expected = toHex(await hmacSha256(secretKey, utf8(dataCheckString(fields, ['hash']))))
 
   if (!timingSafeEqual(expected, fields.hash ?? '')) {
     throw new InvalidInitDataError('Telegram init data hash mismatch.')
@@ -180,7 +185,7 @@ async function verifySignature(fields: Record<string, string>, botToken: string,
     throw new InvalidInitDataError('A bot token is required to derive the bot id for signature validation.')
   }
 
-  const message = utf8(`${botId}:${HMAC_KEY}\n${dataCheckString(fields)}`)
+  const message = utf8(`${botId}:${HMAC_KEY}\n${dataCheckString(fields, ['hash', 'signature'])}`)
 
   let ok = false
 

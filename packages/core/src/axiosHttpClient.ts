@@ -1,6 +1,8 @@
 import type { AxiosInstance, AxiosProgressEvent } from 'axios'
 import { HttpCancelledError, HttpNetworkError, HttpResponseError } from './httpErrors'
 import { httpHandlers } from './httpHandlers'
+import { TELEGRAM_INIT_DATA_HEADER } from './telegram/server'
+import { initData } from './telegram/webApp'
 import { HttpClient, HttpProgressEvent, HttpRequestConfig, HttpResponse, HttpResponseHeaders } from './types'
 
 /**
@@ -115,6 +117,15 @@ export class AxiosHttpClient implements HttpClient {
 
     if (isBinaryRequestBody(config.data) && !hasContentTypeHeader(config.headers)) {
       headers['Content-Type'] = false
+    }
+
+    const telegramInitData = initData()
+
+    if (
+      telegramInitData &&
+      !Object.keys(headers).some((key) => key.toLowerCase() === TELEGRAM_INIT_DATA_HEADER.toLowerCase())
+    ) {
+      headers[TELEGRAM_INIT_DATA_HEADER] = telegramInitData
     }
 
     try {

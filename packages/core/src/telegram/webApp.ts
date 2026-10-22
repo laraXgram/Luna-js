@@ -17,9 +17,21 @@ export function webApp(): WebApp | undefined {
   return window.Telegram?.WebApp
 }
 
-/** Whether the app is running inside a Telegram Mini App environment. */
+/**
+ * Whether the app is running inside a Telegram Mini App environment.
+ *
+ * `telegram-web-app.js` defines `window.Telegram.WebApp` in any browser that
+ * loads it, so its presence alone is not enough: outside Telegram it reports
+ * no init data and the `unknown` platform.
+ */
 export function isTelegram(): boolean {
-  return webApp() !== undefined
+  const app = webApp()
+
+  if (!app) {
+    return false
+  }
+
+  return app.initData !== '' || (!!app.platform && app.platform !== 'unknown')
 }
 
 /**

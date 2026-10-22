@@ -8,7 +8,13 @@ import {
   HttpResponse,
   HttpResponseHeaders,
 } from './types'
+import { TELEGRAM_INIT_DATA_HEADER } from './telegram/server'
+import { initData } from './telegram/webApp'
 import { mergeDataIntoQueryString } from './url'
+
+function hasHeader(config: HttpRequestConfig, name: string): boolean {
+  return Object.keys(config.headers ?? {}).some((key) => key.toLowerCase() === name.toLowerCase())
+}
 
 function getCookie(name: string): string | null {
   const match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'))
@@ -143,6 +149,14 @@ export class XhrHttpClient implements HttpClient {
       }
 
       setHeaders(xhr, config)
+
+      // Every Mini App request authenticates with the signed init data, not
+      // only page visits, so plain `http` / useHttp calls carry it too.
+      const telegramInitData = initData()
+
+      if (telegramInitData && !hasHeader(config, TELEGRAM_INIT_DATA_HEADER)) {
+        xhr.setRequestHeader(TELEGRAM_INIT_DATA_HEADER, telegramInitData)
+      }
 
       if (config.onUploadProgress) {
         xhr.upload.onprogress = (event: ProgressEvent) => {

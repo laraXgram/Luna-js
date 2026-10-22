@@ -54,6 +54,15 @@ describe('validateInitData (tgcloud / JS backend)', () => {
     expect(result.auth_date).toBe(now)
   })
 
+  it('accepts data from current clients, whose hash also covers the signature field', async () => {
+    // Telegram sends an Ed25519 `signature` alongside `hash`; the bot-token
+    // hash is computed over every field but `hash`, signature included.
+    const raw = await sign(BOT_TOKEN, { ...baseFields, signature: 'c2lnbmF0dXJlLWZyb20tdGVsZWdyYW0' })
+    const result = await validateInitData(raw, { botToken: BOT_TOKEN })
+
+    expect(result.user?.id).toBe(42)
+  })
+
   it('rejects tampered data', async () => {
     const raw = await sign(BOT_TOKEN, baseFields)
     const broken = raw.replace(

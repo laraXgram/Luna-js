@@ -78,4 +78,13 @@ describe('TMA cross-layer contract', () => {
 
     delete (globalThis as { window?: unknown }).window
   })
+  it('is not a Mini App when the SDK is loaded in a plain browser', () => {
+    ;(globalThis as { window?: unknown }).window = {
+      Telegram: { WebApp: { initData: '', platform: 'unknown' } },
+    }
+
+    expect(isTelegram()).toBe(false)
+
+    delete (globalThis as { window?: unknown }).window
+  })
 })
