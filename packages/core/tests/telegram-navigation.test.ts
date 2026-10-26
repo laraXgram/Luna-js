@@ -109,6 +109,7 @@ function makeEnv() {
     back,
     firePopstate: () => winListeners['popstate']?.forEach((cb) => cb()),
     fireNavigate: () => docListeners['luna:navigate']?.forEach((cb) => cb()),
+    fireSuccess: () => docListeners['luna:success']?.forEach((cb) => cb()),
   }
 }
 
@@ -178,6 +179,31 @@ describe('telegram back button ↔ history', () => {
     env.app.BackButton.tap()
     expect(onBack).toHaveBeenCalledOnce()
     expect(env.back).not.toHaveBeenCalled()
+  })
+
+  it('asks a custom canGoBack again after a replace visit, which fires no navigate', () => {
+    const env = makeEnv()
+    let page = '/entry'
+    initTelegramBackButton({ canGoBack: () => page !== '/entry' })
+
+    env.fireNavigate() // initial
+    expect(env.app.BackButton.isVisible).toBe(false)
+
+    page = '/inner'
+    env.fireSuccess() // replace visit to another page
+    expect(env.app.BackButton.isVisible).toBe(true)
+  })
+
+  it('stops listening for finished visits on teardown', () => {
+    const env = makeEnv()
+    let page = '/entry'
+    const teardown = initTelegramBackButton({ canGoBack: () => page !== '/entry' })
+    env.fireNavigate()
+    teardown()
+
+    page = '/inner'
+    env.fireSuccess()
+    expect(env.app.BackButton.isVisible).toBe(false)
   })
 
   it('is a no-op outside Telegram', () => {

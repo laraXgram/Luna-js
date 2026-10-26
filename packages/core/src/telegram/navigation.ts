@@ -24,6 +24,8 @@ export type TelegramBackButtonOptions = {
 }
 
 const NAVIGATE_EVENT = 'luna:navigate'
+// Fired after every finished visit, `replace` visits included, which fire no `navigate`.
+const SUCCESS_EVENT = 'luna:success'
 
 let depth = 0
 // Skip the very first `navigate` (the initial page load) so the entry page
@@ -120,6 +122,9 @@ export function initTelegramBackButton(options: TelegramBackButtonOptions = {}):
 
   window.addEventListener('popstate', handlePopstate)
   document.addEventListener(NAVIGATE_EVENT, handleNavigate)
+  // A `replace` visit changes the page without a `navigate`; a custom
+  // `canGoBack` that reads the current page must be asked again.
+  document.addEventListener(SUCCESS_EVENT, sync)
   app.BackButton.onClick(handleBackClick)
 
   sync()
@@ -127,6 +132,7 @@ export function initTelegramBackButton(options: TelegramBackButtonOptions = {}):
   teardown = () => {
     window.removeEventListener('popstate', handlePopstate)
     document.removeEventListener(NAVIGATE_EVENT, handleNavigate)
+    document.removeEventListener(SUCCESS_EVENT, sync)
     app.BackButton.offClick(handleBackClick)
     app.BackButton.hide()
     initialized = false
