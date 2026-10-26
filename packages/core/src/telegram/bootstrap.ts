@@ -1,6 +1,10 @@
 import { initTelegramCssVariables } from './css'
-import { initTelegramBackButton } from './navigation'
+import { initTelegramBackButton, type TelegramBackButtonOptions } from './navigation'
+import { requestFullscreen } from './viewport'
 import { webApp } from './webApp'
+
+/** Platforms `fullscreen: 'mobile'` applies to. */
+const MOBILE_PLATFORMS = ['android', 'ios']
 
 export type TelegramBootstrapOptions = {
   /** Call WebApp.ready() to signal the app is loaded. Default: true. */
@@ -19,9 +23,21 @@ export type TelegramBootstrapOptions = {
   /**
    * Sync the native BackButton with Luna's browser-history navigation: show it
    * when there is somewhere to go back to, hide it on the entry page, and run
-   * `history.back()` on tap. Default: true.
+   * `history.back()` on tap. Pass options to change when it shows or what a tap
+   * does. Default: true.
+   *
+   * While the button is hidden, Android's back gesture and back key close (or
+   * minimize) the Mini App instead of going back.
    */
-  backButton?: boolean
+  backButton?: boolean | TelegramBackButtonOptions
+  /**
+   * Request fullscreen on launch: `true` everywhere, `'mobile'` on Android and
+   * iOS only (fullscreen on a desktop client covers the whole screen). Telegram's
+   * close and menu buttons then float over the page; keep content clear of them
+   * with the `--tg-content-safe-area-inset-*` CSS variables. Needs Bot API 8.0.
+   * Default: false.
+   */
+  fullscreen?: boolean | 'mobile'
 }
 
 let booted = false
@@ -49,6 +65,7 @@ export function bootstrapTelegram(options: TelegramBootstrapOptions = {}): void 
     disableVerticalSwipes = false,
     cssVariables = true,
     backButton = true,
+    fullscreen = false,
   } = options
 
   if (ready) {
@@ -72,7 +89,16 @@ export function bootstrapTelegram(options: TelegramBootstrapOptions = {}): void 
   }
 
   if (backButton) {
-    initTelegramBackButton()
+    initTelegramBackButton(backButton === true ? {} : backButton)
+  }
+
+  if (
+    (fullscreen === true || (fullscreen === 'mobile' && MOBILE_PLATFORMS.includes(app.platform)))
+    && app.isVersionAtLeast('8.0')
+    && !app.isFullscreen
+  ) {
+    // A client that refuses (e.g. unsupported) leaves the app as it is.
+    requestFullscreen().catch(() => {})
   }
 }
 
